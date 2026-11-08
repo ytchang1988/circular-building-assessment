@@ -1,0 +1,217 @@
+{
+  "appTitle": "BCI × EC × LCC Circular Building Platform",
+  "lang": {
+    "zh-TW": "Traditional Chinese",
+    "en": "English"
+  },
+  "nav": {
+    "project": "Project",
+    "groupStructure": "Structure",
+    "groupEnvelope": "Envelope",
+    "groupInterior": "Interior",
+    "dashboard": "Dashboard"
+  },
+  "groups": {
+    "structure": "Structure",
+    "envelope": "Envelope",
+    "interior": "Interior"
+  },
+  "categoryLabels": {
+    "columns": "Columns",
+    "beams": "Beams",
+    "slabs": "Slabs",
+    "walls": "Exterior walls",
+    "windows": "Windows",
+    "cladding": "Cladding",
+    "interiorWalls": "Interior walls",
+    "floors": "Floors"
+  },
+  "windows": {
+    "headers": {
+      "glass": "Glass type",
+      "frame": "Frame type"
+    }
+  },
+  "lifecycle": {
+    "buildingClassHint": "Set in Project → building class; affects layer life and lifecycle total weight/EC.",
+    "classMismatch": "Current building class not in this category's list"
+  },
+  "project": {
+    "name": "Project name",
+    "type": "Building type",
+    "totalFloorArea": "Total floor area (m²)",
+    "buildingType": {
+      "RC": "Reinforced Concrete (RC)",
+      "SRC": "Steel Reinforced Concrete (SRC)"
+    },
+    "buildingClass": "Building class",
+    "buildingClassHelp": "Determines layer life and lifecycle total for interior walls / floors",
+    "notSet": "Not set",
+    "demoTitle": "Load demo project",
+    "demoHint": "One-click load the full 楊梅 RC case (238 elements across 8 categories) to showcase BCI / EC / material-flow / LCC. Overwrites current inputs.",
+    "demoButton": "Load 楊梅 RC demo",
+    "demoLoading": "Loading...",
+    "demoConfirm": "This will overwrite the current project and all elements. Continue?",
+    "demoDone": "Loaded {{count}} elements. Visit any category page or the dashboard.",
+    "demoError": "Load failed: {{msg}}"
+  },
+  "columns": {
+    "title": "RC Structural Columns",
+    "addElement": "Add element",
+    "import": "Import",
+    "clearAll": "Clear all",
+    "confirmClear": "Delete all {{count}} elements? This cannot be undone.",
+    "consolidate": "Merge duplicates",
+    "consolidateHint": "Rows with identical Floor + Family + Strength + Admixture + Reused + Prefab merge into one row, volumes summed. BCI and EC values are unchanged.",
+    "consolidateHintArea": "Rows with identical Floor + Family + Construction + Reused + Green recycled + Prefab merge into one row, areas summed. BCI and EC values are unchanged.",
+    "consolidateHintWindow": "Rows with identical Floor + Family + Glass + Frame + Reused + Prefab merge into one row, areas summed. BCI and EC values are unchanged.",
+    "consolidateNone": "No duplicate rows to merge",
+    "consolidateDone": "Merged {{before}} rows into {{after}}",
+    "removeElement": "Remove",
+    "headers": {
+      "floor": "Floor",
+      "family": "Family / Type",
+      "volumeM3": "Volume (m³)",
+      "concreteStrength": "Concrete strength",
+      "admixturePct": "Mineral admixture %",
+      "massMineral": "Mineral (kg)",
+      "massMetal": "Metal (kg)",
+      "massGlass": "Glass (kg)",
+      "massWood": "Wood (kg)",
+      "massPlastic": "Plastic (kg)",
+      "massOther": "Other (kg)",
+      "greenDemolition": "Sorted demolition",
+      "reused": "Reused component",
+      "prefabModular": "Prefab / Modular",
+      "note": "Note"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "empty": "No elements yet. Click \"Add element\" to start.",
+    "selectAll": "Select all",
+    "selectRow": "Select row (Shift+click for range)",
+    "selectRowHint": "Shift+click to select from last anchor row to this row",
+    "analysisResults": "Analysis results",
+    "guide": {
+      "title": "Field guide",
+      "floor": "Label only; does not affect calculation.",
+      "family": "e.g. column cross-section 900×900; label only.",
+      "volume": "Element volume (m³). Total mass = volume × (2400 + rebar) kg/m³. EC scales linearly with volume.",
+      "concreteStrength": "140–420 kgf/cm². Higher strength → more cement → higher EC.",
+      "admixturePct": "0–50%. Portion of cement replaced by fly ash / slag. Higher % → lower EC, higher FR → higher MCIp.",
+      "massMineral": "Concrete mass = volume × concrete density (default 2400 kg/m³). Classified as mineral.",
+      "massMetal": "Rebar mass = volume × rebar mass per m³ (default 314 kg/m³ ≈ 4% cross-section). Classified as metal.",
+      "materialBreakdown": "RC categories only split into mineral (concrete) + metal (rebar); other categories classify by construction name keywords (aluminum/steel/glass/wood/plastic/paint) for now, template-level per-layer breakdown can be added later.",
+      "reused": "If checked, FU = 100% → MCIp improves substantially.",
+      "prefabModular": "If checked, PCI × 1.1 bonus."
+    },
+    "batch": {
+      "selected": "{{count}} selected",
+      "applyTo": "Apply to selected",
+      "delete": "Delete selected",
+      "clear": "Clear selection"
+    }
+  },
+  "composite": {
+    "headers": {
+      "areaM2": "Area (m²)",
+      "constructionType": "Construction type",
+      "greenRecycled": "Green recycled"
+    }
+  },
+  "importArea": {
+    "title": "Import area-based elements (cladding / interior walls / floors)",
+    "help": "Copy rows from Excel / Google Sheets and paste below, or upload a CSV / xlsx file. Headers may be in English or Chinese. Required: Area (m²). Optional: Floor, Family, Construction type, Reused, Green recycled, Prefab/Modular, Note. Construction names fuzzy-match against the template.",
+    "placeholder": "Floor\tFamily\tArea\tConstruction\tReused\tGreen\tModular\n1F\tW-A\t8.5\tPrecast dry RC wall\tNo\tNo\tYes\n2F\tW-B\t12.0\tRC + cement mortar + paint\tNo\tNo\tNo"
+  },
+  "importWindow": {
+    "title": "Import window elements",
+    "help": "Copy rows from Excel / Google Sheets and paste below, or upload a CSV / xlsx file. Headers may be in English or Chinese. Required: Area (m²). Optional: Floor, Family, Glass, Frame, Reused, Prefab/Modular, Note. Glass and frame names fuzzy-match against the template.",
+    "placeholder": "Floor\tFamily\tArea\tGlass\tFrame\tReused\tModular\n1F\tWIN-A\t2.4\t5+5mm laminated\tAluminum inset\tNo\tNo"
+  },
+  "import": {
+    "title": "Import column elements",
+    "help": "Copy rows from Excel / Google Sheets and paste below, or upload a CSV / xlsx file. Headers may be in English or Chinese. Required: Volume (m³). Optional: Floor, Family, Concrete strength, Admixture %, Reused, Prefab/Modular, Note.",
+    "uploadFile": "Choose file (CSV / xlsx)",
+    "loading": "Loading...",
+    "placeholder": "Floor\tFamily\tVolume\tConcrete strength\tAdmixture\tReused\tModular\n1F\tC-A\t1.2\t結構用混凝土，預拌，350kgf/cm2\t20%\tNo\tYes\n2F\tC-B\t0.9\t350\t20%\tNo\tYes",
+    "preview": "Preview",
+    "clear": "Clear",
+    "previewOk": "{{count}} rows ready",
+    "previewErr": "{{count}} errors",
+    "previewTruncated": "Showing first {{shown}} of {{total}}",
+    "warningsHeader": "Warnings",
+    "row": "Row",
+    "append": "Append",
+    "replace": "Replace",
+    "cancel": "Cancel"
+  },
+  "summary": {
+    "title": "Summary",
+    "M": "Total mass M (kg)",
+    "massMineral": "Mineral mass (kg)",
+    "massMetal": "Metal mass (kg)",
+    "massGlass": "Glass mass (kg)",
+    "massWood": "Wood mass (kg)",
+    "massPlastic": "Plastic mass (kg)",
+    "massOther": "Other mass (kg)",
+    "CI_CON": "Manufacturing CI-CON",
+    "CI_USE": "Use stage CI-USE",
+    "CI_EOL": "End-of-life CI-EOL",
+    "MCIp": "Material circularity MCIp",
+    "PCI": "Component circularity PCI",
+    "SCIp": "System circularity SCIp",
+    "BCI": "Building circularity BCI",
+    "baselineEC": "Baseline EC (kgCO₂eq)",
+    "designEC": "Design EC (kgCO₂eq)",
+    "reduction": "Reduction (kgCO₂eq)",
+    "reductionRatio": "Reduction ratio",
+    "cost": "Construction cost (NT$)"
+  },
+  "dashboard": {
+    "byCategory": "By category",
+    "category": "Category"
+  },
+  "tableGroups": {
+    "basic": "Basic info",
+    "materials": "Material composition",
+    "circularity": "Circularity methods & performance",
+    "destination": "Material destination",
+    "lcc": "Life-cycle cost (LCC)"
+  },
+  "lcc": {
+    "cost": "Construction C₀",
+    "lccC1": "Demolition C₁",
+    "lccC2": "Transport & handling C₂",
+    "lccD": "Residual D",
+    "lccNominal": "Terminal net (nominal)",
+    "lccPV": "Terminal net (PV)",
+    "scenarioA": "Standard demolition",
+    "scenarioB": "Sorted (green) demolition",
+    "discountBase": "Nominal discount i = 5.2% (base)",
+    "lifeNote": "Life: structure 60 / envelope 30 / interior 20 yr"
+  },
+  "analysis": {
+    "materialComposition": "Material composition",
+    "circularityIndices": "Circularity indices",
+    "embodiedCarbon": "Embodied carbon",
+    "cost": "Construction cost",
+    "costPerTonne": "Cost per tonne",
+    "costNoData": "Unit prices not set — edit `unitPrice` in template JSONs",
+    "wasteFlow": "Material flow (construction → material → code)",
+    "lcc": "Life-cycle cost (LCC)",
+    "LCCb": "Building life-cycle cost LCCb",
+    "totalNetCost": "Terminal net (NT$) = C₁ demolition + each code (handling + transport − residual)",
+    "netTotal": "Net",
+    "noMass": "No mass data yet"
+  },
+  "waste": {
+    "wasteB5": "Waste soil",
+    "wasteR1301": "Scrap iron",
+    "wasteR1304": "Scrap aluminum",
+    "wasteR0401": "Waste glass",
+    "wasteR0701": "Waste wood",
+    "wasteR0201": "Waste plastic",
+    "wasteR0503": "Mixed demolition"
+  }
+}

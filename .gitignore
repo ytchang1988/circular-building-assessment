@@ -1,0 +1,38 @@
+# Dependencies & build outputs
+node_modules/
+web/dist/
+web/.vite/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Claude Code session state (local only)
+.claude/
+
+# Raw project data (xlsx + references) — kept out of the repo per user choice.
+# Only the pre-baked demo bundle at web/public/demo/yangmei.json ships.
+0-樣板-RC/
+1-楊梅-RC/
+*.pdf
+*.xlsx
+# Keep these xlsx that live under templates/ (none today, but future-proof the rule)
+!web/src/templates/**/*.xlsx
+
+# Research-report derivatives kept out of the public repo (even as spec).
+LCC計算規格.md
+
+# Screenshots and transient images at the repo root
+/*.png
+/*.jpg
+/*.jpeg
+# Keep docs images if later added under docs/
+!docs/**/*.png
+!docs/**/*.jpg
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,93 @@
+{
+  "category": "RC外牆外裝",
+  "categoryEn": "RC Cladding",
+  "unitSymbol": "m²",
+  "layerLifeYears": 30,
+  "projectLifeYears": 60,
+  "FRR": 0,
+  "EF": 0.9,
+  "CU": 0,
+  "CR": 0.75,
+  "EC_efficiency": 0.9,
+  "baselineConstruction": "RC外牆貼磁磚(基準)",
+  "elementDefaults": {
+    "constructionType": "RC外牆貼磁磚(基準)",
+    "reused": false,
+    "greenRecycled": false,
+    "prefabModular": false
+  },
+  "constructions": [
+    {
+      "name": "RC外牆貼磁磚(基準)",
+      "weightPerM2": 90.8,
+      "updateCount": 1.0,
+      "frWhenGreen": 0,
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "designECPerM2": 48.35,
+      "unitPrice": 5100
+    },
+    {
+      "name": "RC外牆乾式鋼件掛石材",
+      "weightPerM2": 169.6521739,
+      "updateCount": 1.0,
+      "frWhenGreen": 0,
+      "downcycle": "Y",
+      "lightweight": "N",
+      "componentDetachable": "Y",
+      "systemDetachable": "N",
+      "designECPerM2": 25.58,
+      "unitPrice": 7400
+    },
+    {
+      "name": "RC外牆塗料外裝",
+      "weightPerM2": 52,
+      "updateCount": 3.0,
+      "frWhenGreen": 0,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "designECPerM2": 31.93,
+      "unitPrice": 3300
+    },
+    {
+      "name": "金屬模板搗灌RC外牆 (免砂漿粉刷)貼磁磚",
+      "weightPerM2": 50.8,
+      "updateCount": 1.0,
+      "frWhenGreen": 0,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "N",
+      "designECPerM2": 39.3,
+      "unitPrice": 4800
+    },
+    {
+      "name": "金屬模板搗灌RC外牆 (免砂漿粉刷)塗料外裝",
+      "weightPerM2": 12,
+      "updateCount": 3.0,
+      "frWhenGreen": 0,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "N",
+      "designECPerM2": 22.84,
+      "unitPrice": 3000
+    },
+    {
+      "name": "預鑄乾式RC外牆(免砂漿粉刷)塗料外裝",
+      "weightPerM2": 12,
+      "updateCount": 3.0,
+      "frWhenGreen": 0,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "designECPerM2": 22.84,
+      "unitPrice": 4000
+    }
+  ]
+}

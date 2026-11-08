@@ -1,0 +1,126 @@
+{
+  "category": "RC內牆",
+  "categoryEn": "Interior Walls",
+  "unitSymbol": "m²",
+  "kind": "lifecycle",
+  "projectLifeYears": 60,
+  "FRR": 0,
+  "EF": 0.9,
+  "CU": 0,
+  "EC_efficiency": 0.9,
+  "baselineConstruction": "磚牆雙面粉刷（基準值）",
+  "buildingClasses": [
+    {
+      "name": "高耗損建築 （商店商場、 旅館、餐廳、 運動、醫療、 娛樂、交通旅運設施）",
+      "updateCount": 2.0
+    },
+    {
+      "name": "中耗損建築 （出租辦公建築、工廠、 公共廳舍、教育文化設施）",
+      "updateCount": 1.0
+    },
+    {
+      "name": "低耗損建築 （自用辦公建築、倉庫、 住宅、住宿類建築）",
+      "updateCount": 0.0
+    }
+  ],
+  "defaultBuildingClass": "低耗損建築 （自用辦公建築、倉庫、 住宅、住宿類建築）",
+  "constructions": [
+    {
+      "name": "磚牆雙面粉刷（基準值）",
+      "newWeightPerM2": 200,
+      "newECPerM2": 56.28,
+      "frNotGreen": 0,
+      "frGreen": 0.135,
+      "cr": 0.75,
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "unitPrice": 3750
+    },
+    {
+      "name": "輕質灌漿牆",
+      "newWeightPerM2": 152.0808743,
+      "newECPerM2": 31.83,
+      "frNotGreen": 0.0493101481,
+      "frGreen": 0.1560402026,
+      "cr": 0.7592456528,
+      "downcycle": "Y",
+      "lightweight": "Y",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "unitPrice": 2000
+    },
+    {
+      "name": "輕隔間牆（矽酸鈣板）",
+      "newWeightPerM2": 37.0808743,
+      "newECPerM2": 22.33,
+      "frNotGreen": 0.2022371526,
+      "frGreen": 0.5258541176,
+      "cr": 0.7676934058,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "unitPrice": 1450
+    },
+    {
+      "name": "10公分RC隔間牆",
+      "newWeightPerM2": 290.9678308,
+      "newECPerM2": 61.665,
+      "frNotGreen": 0.02271280517,
+      "frGreen": 0.1352035912,
+      "cr": 0.7748794872,
+      "downcycle": "Y",
+      "lightweight": "N",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "unitPrice": 2000
+    },
+    {
+      "name": "12公分RC隔間牆",
+      "newWeightPerM2": 340.6200047,
+      "newECPerM2": 70.31,
+      "frNotGreen": 0.02328235181,
+      "frGreen": 0.1280249961,
+      "cr": 0.7719803782,
+      "downcycle": "Y",
+      "lightweight": "N",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "unitPrice": 2400
+    },
+    {
+      "name": "清水空心磚牆",
+      "newWeightPerM2": 122.3043478,
+      "newECPerM2": 9.15,
+      "frNotGreen": 0.01507287593,
+      "frGreen": 0.4974760043,
+      "cr": 0.7528261642,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "unitPrice": 2150
+    },
+    {
+      "name": "水泥雙面粉刷空心磚牆",
+      "newWeightPerM2": 150.0113091,
+      "newECPerM2": 15.51,
+      "frNotGreen": 0.01228892856,
+      "frGreen": 0.4805869551,
+      "cr": 0.7523041741,
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "unitPrice": 4050
+    }
+  ],
+  "elementDefaults": {
+    "constructionType": "磚牆雙面粉刷（基準值）",
+    "reused": false,
+    "greenRecycled": false,
+    "prefabModular": false
+  }
+}

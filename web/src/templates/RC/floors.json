@@ -1,0 +1,362 @@
+{
+  "category": "RC地坪",
+  "categoryEn": "Floors",
+  "unitSymbol": "m²",
+  "projectLifeYears": 60,
+  "FRR": 0,
+  "EF": 0.9,
+  "CU": 0,
+  "CR": 0.75,
+  "EC_efficiency": 0.9,
+  "baselineConstruction": "貼磁磚地坪（基準值）",
+  "buildingClasses": [
+    "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）",
+    "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）",
+    "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）"
+  ],
+  "defaultBuildingClass": "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）",
+  "constructions": [
+    {
+      "name": "貼磁磚地坪（基準值）",
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 200,
+          "totalECPerM2": 105.76,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 3
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 120,
+          "totalECPerM2": 72.53,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 100,
+          "totalECPerM2": 52.88,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 1
+        }
+      },
+      "unitPrice": 1500
+    },
+    {
+      "name": "整體粉光地坪",
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 5.542857143,
+          "totalECPerM2": 1.94,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 3
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 2.771428571,
+          "totalECPerM2": 0.97,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 2.771428571,
+          "totalECPerM2": 0.97,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 1
+        }
+      },
+      "unitPrice": 1050
+    },
+    {
+      "name": "水泥砂漿地坪",
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 120,
+          "totalECPerM2": 27.16,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 3
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 60,
+          "totalECPerM2": 13.58,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 60,
+          "totalECPerM2": 13.58,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 1
+        }
+      },
+      "unitPrice": 750
+    },
+    {
+      "name": "貼石材地坪（軟）",
+      "downcycle": "Y",
+      "lightweight": "N",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 352,
+          "totalECPerM2": 50.88,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 3
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 224,
+          "totalECPerM2": 29.11,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 176,
+          "totalECPerM2": 25.44,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 1
+        }
+      },
+      "unitPrice": 4300
+    },
+    {
+      "name": "磨/洗/抿/植石子地坪",
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 220,
+          "totalECPerM2": 50.06,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 3
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 110,
+          "totalECPerM2": 25.03,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 110,
+          "totalECPerM2": 25.03,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 1
+        }
+      },
+      "unitPrice": 4700
+    },
+    {
+      "name": "PU/Epoxy/壓花/硬化膜/壓克力樹脂/紙模版",
+      "downcycle": "Y",
+      "lightweight": "Y",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 153.8,
+          "totalECPerM2": 57.24,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 3
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 85.35,
+          "totalECPerM2": 36.14,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 76.9,
+          "totalECPerM2": 28.62,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 1
+        }
+      },
+      "unitPrice": 943
+    },
+    {
+      "name": "水泥砂漿地坪+高架實木板、美耐板鋪作地坪",
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 334.2,
+          "totalECPerM2": 132.16,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 5
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 202.8,
+          "totalECPerM2": 83.58,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 3
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 167.1,
+          "totalECPerM2": 66.08,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        }
+      },
+      "unitPrice": 3250
+    },
+    {
+      "name": "水泥砂漿地坪+高架超耐磨地板鋪作地坪",
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 316.2,
+          "totalECPerM2": 164.26,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 5
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 190.8,
+          "totalECPerM2": 104.98,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 3
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 158.1,
+          "totalECPerM2": 82.13,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        }
+      },
+      "unitPrice": 2950
+    },
+    {
+      "name": "水泥砂漿地坪+角材墊高平鋪實木板、美耐板地坪",
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 298.2,
+          "totalECPerM2": 116.38,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 5
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 178.8,
+          "totalECPerM2": 73.06,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 3
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 149.1,
+          "totalECPerM2": 58.19,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        }
+      },
+      "unitPrice": 2750
+    },
+    {
+      "name": "水泥砂漿地坪+角材墊高平鋪超耐磨地板地坪",
+      "downcycle": "N",
+      "lightweight": "N",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 280.2,
+          "totalECPerM2": 148.49,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 5
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 166.8,
+          "totalECPerM2": 94.47,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 3
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 140.1,
+          "totalECPerM2": 74.25,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        }
+      },
+      "unitPrice": 2550
+    },
+    {
+      "name": "水泥砂漿地坪+直鋪式（墊PS版）超耐磨地板",
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "Y",
+      "systemDetachable": "Y",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 190.2,
+          "totalECPerM2": 124.6,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 5
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 106.8,
+          "totalECPerM2": 78.54,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 3
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 95.1,
+          "totalECPerM2": 62.3,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        }
+      },
+      "unitPrice": 2250
+    },
+    {
+      "name": "水泥砂漿地坪+貼塑膠地板/方塊地毯",
+      "downcycle": "N",
+      "lightweight": "Y",
+      "componentDetachable": "N",
+      "systemDetachable": "N",
+      "byClass": {
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
+          "totalWeightPerM2": 144.72,
+          "totalECPerM2": 58.9,
+          "baseUpdateCount": 1,
+          "surfaceUpdateCount": 5
+        },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
+          "totalWeightPerM2": 76.48,
+          "totalECPerM2": 34.74,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 3
+        },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
+          "totalWeightPerM2": 72.36,
+          "totalECPerM2": 29.45,
+          "baseUpdateCount": 0,
+          "surfaceUpdateCount": 2
+        }
+      },
+      "unitPrice": 1350
+    }
+  ],
+  "elementDefaults": {
+    "constructionType": "貼磁磚地坪（基準值）",
+    "reused": false,
+    "greenRecycled": false,
+    "prefabModular": false
+  }
+}

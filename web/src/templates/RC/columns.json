@@ -1,0 +1,474 @@
+{
+  "category": "RC結構柱",
+  "categoryEn": "RC Structural Column",
+  "volumeUnit": "m³",
+  "rebarDefaultMassPerM3": 314,
+  "defaults": {
+    "category": "結構",
+    "projectLifeYears": 60,
+    "layerLifeYears": 60,
+    "productLifeYears": 60,
+    "downcycle": "Y",
+    "lightweight": "N",
+    "componentDetachable": "N",
+    "systemDetachable": "N",
+    "FRR": 0,
+    "EF": 0.9,
+    "CU": 0,
+    "EC_efficiency": 0.9
+  },
+  "elementDefaults": {
+    "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+    "admixturePct": 0.2,
+    "reused": false,
+    "prefabModular": false
+  },
+  "concreteMaterials": [
+    {
+      "strength": "結構用混凝土，預拌，140kgf/cm2",
+      "admixturePct": 0,
+      "density": 2400,
+      "cementRatio": 0.115375,
+      "recycledRatio": 0,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，140kgf/cm2",
+      "ecFactor": 304.785,
+      "unitPrice": 2700
+    },
+    {
+      "strength": "結構用混凝土，預拌，175kgf/cm2",
+      "admixturePct": 0,
+      "density": 2400,
+      "cementRatio": 0.125,
+      "recycledRatio": 0,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，175kgf/cm2",
+      "ecFactor": 344.288,
+      "unitPrice": 2900
+    },
+    {
+      "strength": "結構用混凝土，預拌，210kgf/cm2",
+      "admixturePct": 0,
+      "density": 2400,
+      "cementRatio": 0.136375,
+      "recycledRatio": 0,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，210kgf/cm2",
+      "ecFactor": 384.285,
+      "unitPrice": 3050
+    },
+    {
+      "strength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0,
+      "density": 2400,
+      "cementRatio": 0.166667,
+      "recycledRatio": 0,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，280kgf/cm2",
+      "ecFactor": 433.785,
+      "unitPrice": 3400
+    },
+    {
+      "strength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0,
+      "density": 2400,
+      "cementRatio": 0.1875,
+      "recycledRatio": 0,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，350kgf/cm2",
+      "ecFactor": 511.29,
+      "unitPrice": 3750
+    },
+    {
+      "strength": "結構用混凝土，預拌，420kgf/cm2",
+      "admixturePct": 0,
+      "density": 2400,
+      "cementRatio": 0.214292,
+      "recycledRatio": 0,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，420kgf/cm2",
+      "ecFactor": 578.091,
+      "unitPrice": 4100
+    },
+    {
+      "strength": "結構用混凝土，預拌，140kgf/cm2",
+      "admixturePct": 0.1,
+      "density": 2400,
+      "cementRatio": 0.115375,
+      "recycledRatio": 0.0115375,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，140kgf/cm2(10%礦物摻料)",
+      "ecFactor": 282.838,
+      "unitPrice": 2700
+    },
+    {
+      "strength": "結構用混凝土，預拌，175kgf/cm2",
+      "admixturePct": 0.1,
+      "density": 2400,
+      "cementRatio": 0.125,
+      "recycledRatio": 0.0125,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，175kgf/cm2(10%礦物摻料)",
+      "ecFactor": 316.285,
+      "unitPrice": 2900
+    },
+    {
+      "strength": "結構用混凝土，預拌，210kgf/cm2",
+      "admixturePct": 0.1,
+      "density": 2400,
+      "cementRatio": 0.136375,
+      "recycledRatio": 0.0136375,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，210kgf/cm2(10%礦物摻料)",
+      "ecFactor": 349.232,
+      "unitPrice": 3050
+    },
+    {
+      "strength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.1,
+      "density": 2400,
+      "cementRatio": 0.166667,
+      "recycledRatio": 0.0166667,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，280kgf/cm2(10%礦物摻料)",
+      "ecFactor": 397.627,
+      "unitPrice": 3400
+    },
+    {
+      "strength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.1,
+      "density": 2400,
+      "cementRatio": 0.1875,
+      "recycledRatio": 0.01875,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，350kgf/cm2(10%礦物摻料)",
+      "ecFactor": 463.285,
+      "unitPrice": 3750
+    },
+    {
+      "strength": "結構用混凝土，預拌，420kgf/cm2",
+      "admixturePct": 0.1,
+      "density": 2400,
+      "cementRatio": 0.214292,
+      "recycledRatio": 0.0214292,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，420kgf/cm2(10%礦物摻料)",
+      "ecFactor": 522.085,
+      "unitPrice": 4100
+    },
+    {
+      "strength": "結構用混凝土，預拌，140kgf/cm2",
+      "admixturePct": 0.2,
+      "density": 2400,
+      "cementRatio": 0.115375,
+      "recycledRatio": 0.023075,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，140kgf/cm2(20%礦物摻料)",
+      "ecFactor": 267.285,
+      "unitPrice": 2700
+    },
+    {
+      "strength": "結構用混凝土，預拌，175kgf/cm2",
+      "admixturePct": 0.2,
+      "density": 2400,
+      "cementRatio": 0.125,
+      "recycledRatio": 0.025,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，175kgf/cm2(20%礦物摻料)",
+      "ecFactor": 292.505,
+      "unitPrice": 2900
+    },
+    {
+      "strength": "結構用混凝土，預拌，210kgf/cm2",
+      "admixturePct": 0.2,
+      "density": 2400,
+      "cementRatio": 0.136375,
+      "recycledRatio": 0.027275,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，210kgf/cm2(20%礦物摻料)",
+      "ecFactor": 321.285,
+      "unitPrice": 3050
+    },
+    {
+      "strength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "density": 2400,
+      "cementRatio": 0.166667,
+      "recycledRatio": 0.0333334,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，280kgf/cm2(20%礦物摻料)",
+      "ecFactor": 366.285,
+      "unitPrice": 3400
+    },
+    {
+      "strength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "density": 2400,
+      "cementRatio": 0.1875,
+      "recycledRatio": 0.0375,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，350kgf/cm2(20%礦物摻料)",
+      "ecFactor": 433.695,
+      "unitPrice": 3750
+    },
+    {
+      "strength": "結構用混凝土，預拌，420kgf/cm2",
+      "admixturePct": 0.2,
+      "density": 2400,
+      "cementRatio": 0.214292,
+      "recycledRatio": 0.0428584,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，420kgf/cm2(20%礦物摻料)",
+      "ecFactor": 494.285,
+      "unitPrice": 4100
+    },
+    {
+      "strength": "結構用混凝土，預拌，140kgf/cm2",
+      "admixturePct": 0.3,
+      "density": 2400,
+      "cementRatio": 0.115375,
+      "recycledRatio": 0.0346125,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，140kgf/cm2(30%礦物摻料)",
+      "ecFactor": 228.285,
+      "unitPrice": 2700
+    },
+    {
+      "strength": "結構用混凝土，預拌，175kgf/cm2",
+      "admixturePct": 0.3,
+      "density": 2400,
+      "cementRatio": 0.125,
+      "recycledRatio": 0.0375,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，175kgf/cm2(30%礦物摻料)",
+      "ecFactor": 249.873,
+      "unitPrice": 2900
+    },
+    {
+      "strength": "結構用混凝土，預拌，210kgf/cm2",
+      "admixturePct": 0.3,
+      "density": 2400,
+      "cementRatio": 0.136375,
+      "recycledRatio": 0.0409125,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，210kgf/cm2(30%礦物摻料)",
+      "ecFactor": 267.285,
+      "unitPrice": 3050
+    },
+    {
+      "strength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.3,
+      "density": 2400,
+      "cementRatio": 0.166667,
+      "recycledRatio": 0.0500001,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，280kgf/cm2(30%礦物摻料)",
+      "ecFactor": 317.285,
+      "unitPrice": 3400
+    },
+    {
+      "strength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.3,
+      "density": 2400,
+      "cementRatio": 0.1875,
+      "recycledRatio": 0.05625,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，350kgf/cm2(30%礦物摻料)",
+      "ecFactor": 354.47,
+      "unitPrice": 3750
+    },
+    {
+      "strength": "結構用混凝土，預拌，420kgf/cm2",
+      "admixturePct": 0.3,
+      "density": 2400,
+      "cementRatio": 0.214292,
+      "recycledRatio": 0.0642876,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，420kgf/cm2(30%礦物摻料)",
+      "ecFactor": 394.285,
+      "unitPrice": 4100
+    },
+    {
+      "strength": "結構用混凝土，預拌，140kgf/cm2",
+      "admixturePct": 0.4,
+      "density": 2400,
+      "cementRatio": 0.115375,
+      "recycledRatio": 0.04615,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，140kgf/cm2(40%礦物摻料)",
+      "ecFactor": 216.997,
+      "unitPrice": 2700
+    },
+    {
+      "strength": "結構用混凝土，預拌，175kgf/cm2",
+      "admixturePct": 0.4,
+      "density": 2400,
+      "cementRatio": 0.125,
+      "recycledRatio": 0.05,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，175kgf/cm2(40%礦物摻料)",
+      "ecFactor": 232.418,
+      "unitPrice": 2900
+    },
+    {
+      "strength": "結構用混凝土，預拌，210kgf/cm2",
+      "admixturePct": 0.4,
+      "density": 2400,
+      "cementRatio": 0.136375,
+      "recycledRatio": 0.05455,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，210kgf/cm2(40%礦物摻料)",
+      "ecFactor": 244.073,
+      "unitPrice": 3050
+    },
+    {
+      "strength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.4,
+      "density": 2400,
+      "cementRatio": 0.166667,
+      "recycledRatio": 0.0666668,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，280kgf/cm2(40%礦物摻料)",
+      "ecFactor": 289.153,
+      "unitPrice": 3400
+    },
+    {
+      "strength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.4,
+      "density": 2400,
+      "cementRatio": 0.1875,
+      "recycledRatio": 0.075,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，350kgf/cm2(40%礦物摻料)",
+      "ecFactor": 322.84,
+      "unitPrice": 3750
+    },
+    {
+      "strength": "結構用混凝土，預拌，420kgf/cm2",
+      "admixturePct": 0.4,
+      "density": 2400,
+      "cementRatio": 0.214292,
+      "recycledRatio": 0.0857168,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，420kgf/cm2(40%礦物摻料)",
+      "ecFactor": 359.009,
+      "unitPrice": 4100
+    },
+    {
+      "strength": "結構用混凝土，預拌，140kgf/cm2",
+      "admixturePct": 0.5,
+      "density": 2400,
+      "cementRatio": 0.115375,
+      "recycledRatio": 0.0576875,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，140kgf/cm2(50%礦物摻料)",
+      "ecFactor": 195.05,
+      "unitPrice": 2700
+    },
+    {
+      "strength": "結構用混凝土，預拌，175kgf/cm2",
+      "admixturePct": 0.5,
+      "density": 2400,
+      "cementRatio": 0.125,
+      "recycledRatio": 0.0625,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，175kgf/cm2(50%礦物摻料)",
+      "ecFactor": 204.43,
+      "unitPrice": 2900
+    },
+    {
+      "strength": "結構用混凝土，預拌，210kgf/cm2",
+      "admixturePct": 0.5,
+      "density": 2400,
+      "cementRatio": 0.136375,
+      "recycledRatio": 0.0681875,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，210kgf/cm2(50%礦物摻料)",
+      "ecFactor": 209.02,
+      "unitPrice": 3050
+    },
+    {
+      "strength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.5,
+      "density": 2400,
+      "cementRatio": 0.166667,
+      "recycledRatio": 0.0833335,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，280kgf/cm2(50%礦物摻料)",
+      "ecFactor": 252.995,
+      "unitPrice": 3400
+    },
+    {
+      "strength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.5,
+      "density": 2400,
+      "cementRatio": 0.1875,
+      "recycledRatio": 0.09375,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，350kgf/cm2(50%礦物摻料)",
+      "ecFactor": 275.865,
+      "unitPrice": 3750
+    },
+    {
+      "strength": "結構用混凝土，預拌，420kgf/cm2",
+      "admixturePct": 0.5,
+      "density": 2400,
+      "cementRatio": 0.214292,
+      "recycledRatio": 0.107146,
+      "recyclableRatio": 0.75,
+      "name": "結構用混凝土，預拌，420kgf/cm2(50%礦物摻料)",
+      "ecFactor": 304.439,
+      "unitPrice": 4100
+    }
+  ],
+  "rebarMaterials": [
+    {
+      "crossSectionRatio": 0.01,
+      "massPerM3": 78.5,
+      "recycledRatio": 0.8,
+      "recyclableRatio": 0.9,
+      "ecFactor": 1.15,
+      "unitPricePerKg": 18.9
+    },
+    {
+      "crossSectionRatio": 0.02,
+      "massPerM3": 157,
+      "recycledRatio": 0.8,
+      "recyclableRatio": 0.9,
+      "ecFactor": 1.15,
+      "unitPricePerKg": 18.9
+    },
+    {
+      "crossSectionRatio": 0.03,
+      "massPerM3": 235.5,
+      "recycledRatio": 0.8,
+      "recyclableRatio": 0.9,
+      "ecFactor": 1.15,
+      "unitPricePerKg": 18.9
+    },
+    {
+      "crossSectionRatio": 0.04,
+      "massPerM3": 314,
+      "recycledRatio": 0.8,
+      "recyclableRatio": 0.9,
+      "ecFactor": 1.15,
+      "unitPricePerKg": 18.9
+    },
+    {
+      "crossSectionRatio": 0.05,
+      "massPerM3": 392.5,
+      "recycledRatio": 0.8,
+      "recyclableRatio": 0.9,
+      "ecFactor": 1.15,
+      "unitPricePerKg": 18.9
+    }
+  ],
+  "baselineConcreteEC": {
+    "結構用混凝土，預拌，140kgf/cm2": 304.785,
+    "結構用混凝土，預拌，175kgf/cm2": 344.288,
+    "結構用混凝土，預拌，210kgf/cm2": 384.285,
+    "結構用混凝土，預拌，280kgf/cm2": 433.785,
+    "結構用混凝土，預拌，350kgf/cm2": 511.29,
+    "結構用混凝土，預拌，420kgf/cm2": 578.091
+  }
+}

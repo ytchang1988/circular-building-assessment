@@ -1,0 +1,217 @@
+{
+  "appTitle": "BCI × EC × LCC 循環建築評估平台",
+  "lang": {
+    "zh-TW": "繁體中文",
+    "en": "English"
+  },
+  "nav": {
+    "project": "專案資訊",
+    "groupStructure": "結構",
+    "groupEnvelope": "外覆",
+    "groupInterior": "內裝",
+    "dashboard": "結果儀表板"
+  },
+  "groups": {
+    "structure": "結構",
+    "envelope": "外覆",
+    "interior": "內裝"
+  },
+  "categoryLabels": {
+    "columns": "柱",
+    "beams": "梁",
+    "slabs": "樓版",
+    "walls": "外牆",
+    "windows": "外窗",
+    "cladding": "外裝",
+    "interiorWalls": "內牆",
+    "floors": "地坪"
+  },
+  "windows": {
+    "headers": {
+      "glass": "玻璃類型",
+      "frame": "窗框類型"
+    }
+  },
+  "lifecycle": {
+    "buildingClassHint": "由專案資訊的「建築分類」決定更新次數,影響層次壽命與總重/總碳排。",
+    "classMismatch": "目前選擇的建築分類不在此類別的清單中"
+  },
+  "project": {
+    "name": "專案名稱",
+    "type": "建築類型",
+    "totalFloorArea": "總樓地板面積 (m²)",
+    "buildingType": {
+      "RC": "鋼筋混凝土 (RC)",
+      "SRC": "鋼骨鋼筋混凝土 (SRC)"
+    },
+    "buildingClass": "建築分類",
+    "buildingClassHelp": "影響內牆/地坪的層次壽命與生命週期重量/碳排",
+    "notSet": "未設定",
+    "demoTitle": "載入範例專案",
+    "demoHint": "一鍵載入「楊梅 RC 案」完整資料 (238 筆元件,8 個類別),用於展示 BCI / EC / 物質流向 / LCC 流程。將覆蓋目前所有輸入。",
+    "demoButton": "載入楊梅 RC 範例",
+    "demoLoading": "載入中...",
+    "demoConfirm": "這會覆蓋目前的專案資訊與所有類別元件,確定繼續嗎?",
+    "demoDone": "已載入 {{count}} 筆元件。到各類別頁或結果儀表板查看結果。",
+    "demoError": "載入失敗: {{msg}}"
+  },
+  "columns": {
+    "title": "RC 結構柱",
+    "addElement": "新增元件",
+    "import": "匯入明細",
+    "clearAll": "全部清空",
+    "confirmClear": "確定要刪除全部 {{count}} 筆嗎？此操作無法復原。",
+    "consolidate": "合併相同列",
+    "consolidateHint": "樓層、族群、強度、摻料、再利用、預鑄 全部相同的列會合併為一列，體積加總。BCI 與 EC 數值不變。",
+    "consolidateHintArea": "樓層、族群、構造類型、再利用、綠建材、預鑄 全部相同的列會合併為一列，面積加總。BCI 與 EC 數值不變。",
+    "consolidateHintWindow": "樓層、族群、玻璃、窗框、再利用、預鑄 全部相同的列會合併為一列，面積加總。BCI 與 EC 數值不變。",
+    "consolidateNone": "沒有可合併的重複列",
+    "consolidateDone": "已將 {{before}} 筆合併為 {{after}} 筆",
+    "removeElement": "刪除",
+    "headers": {
+      "floor": "樓層",
+      "family": "族群與類型",
+      "volumeM3": "體積 (m³)",
+      "concreteStrength": "混凝土強度",
+      "admixturePct": "礦物摻料比例",
+      "massMineral": "礦物 (kg)",
+      "massMetal": "金屬 (kg)",
+      "massGlass": "玻璃 (kg)",
+      "massWood": "木材 (kg)",
+      "massPlastic": "塑膠 (kg)",
+      "massOther": "其他 (kg)",
+      "greenDemolition": "綠色拆除",
+      "reused": "再利用構件",
+      "prefabModular": "預鑄/模組化",
+      "note": "備註"
+    },
+    "yes": "是",
+    "no": "否",
+    "empty": "尚未新增任何元件，請點選「新增元件」開始輸入。",
+    "selectAll": "全選",
+    "selectRow": "選取此列 (Shift+點擊可範圍選取)",
+    "selectRowHint": "按住 Shift 點擊 → 從上一個勾選的列到本列全部選取",
+    "analysisResults": "分析結果",
+    "guide": {
+      "title": "輸入欄位說明",
+      "floor": "標示用，不影響計算",
+      "family": "例如柱斷面尺寸 900×900，標示用，不影響計算",
+      "volume": "元件體積 (m³)，材料總重 = 體積 × (2400 + 鋼筋) kg/m³，碳排與體積成正比",
+      "concreteStrength": "140~420 kgf/cm²，強度越高 → 水泥比例越高 → EC 越高",
+      "admixturePct": "0~50%，水泥被飛灰／爐碴取代的比例，比例越高 → EC 越低，FR 越高 → MCIp 越高",
+      "massMineral": "混凝土重量 = 體積 × 混凝土密度 (預設 2400 kg/m³)，歸類為「礦物」",
+      "massMetal": "鋼筋重量 = 體積 × 鋼筋單位體積質量 (預設 314 kg/m³，約 4% 斷面比)，歸類為「金屬」",
+      "materialBreakdown": "RC 類別只有礦物 (混凝土) 與金屬 (鋼筋); 其他類別目前依構造名稱關鍵字 (鋁/鋼/玻璃/木/塑膠/塗料) 歸類到對應欄位，可日後在模板補充逐層拆分",
+      "reused": "勾選後 FU = 100%，MCIp 大幅提升（既有構件再利用）",
+      "prefabModular": "勾選後 PCI × 1.1 加成（預鑄工法或模組化設計）"
+    },
+    "batch": {
+      "selected": "已選 {{count}} 筆",
+      "applyTo": "套用至選取",
+      "delete": "刪除選取",
+      "clear": "取消選取"
+    }
+  },
+  "composite": {
+    "headers": {
+      "areaM2": "面積 (m²)",
+      "constructionType": "構造類型",
+      "greenRecycled": "再生綠建材"
+    }
+  },
+  "importArea": {
+    "title": "匯入面積制明細 (外裝/內牆/地坪)",
+    "help": "從 Excel / Google Sheets 選取資料後 Ctrl+C，貼到下方；或上傳 CSV / xlsx 檔。標頭支援中英文。必填欄位：面積 (m²)。其他欄位可選：樓層、族群與類型、構造類型、再利用、再生綠建材、預鑄/模組化、備註。構造類型不需填完整字串，系統會自動對應。",
+    "placeholder": "樓層\t族群與類型\t面積\t構造類型\t再利用\t綠建材\t預鑄\n1F\tW-A\t8.5\t預鑄乾式RC外牆\t否\t否\t是\n2F\tW-B\t12.0\tRC+水泥砂漿粉刷+塗料\t否\t否\t否"
+  },
+  "importWindow": {
+    "title": "匯入外窗明細",
+    "help": "從 Excel / Google Sheets 選取資料後 Ctrl+C，貼到下方；或上傳 CSV / xlsx 檔。標頭支援中英文。必填欄位：面積 (m²)。其他欄位可選：樓層、族群與類型、玻璃類型、窗框類型、再利用、預鑄/模組化、備註。玻璃與窗框名稱不需完整，系統會自動對應。",
+    "placeholder": "樓層\t族群與類型\t面積\t玻璃\t窗框\t再利用\t預鑄\n1F\tWIN-A\t2.4\t5+5mm強化膠合玻璃\t崁入式鋁框\t否\t否\n2F\tWIN-B\t3.0\t6+12A+6mmLow-E\t崁入式鋁框\t否\t是"
+  },
+  "import": {
+    "title": "匯入結構柱明細",
+    "help": "從 Excel / Google Sheets 選取資料後 Ctrl+C，貼到下方；或上傳 CSV / xlsx 檔。標頭支援中英文。必填欄位：體積 (m³)。其他欄位可選：樓層、族群與類型、混凝土強度、礦物摻料比例、再利用構件、預鑄/模組化、備註。",
+    "uploadFile": "選擇檔案 (CSV / xlsx)",
+    "loading": "讀取中...",
+    "placeholder": "樓層\t族群與類型\t體積\t混凝土強度\t摻料\t再利用\t預鑄\n1F\tC-A\t1.2\t結構用混凝土，預拌，350kgf/cm2\t20%\t否\t是\n2F\tC-B\t0.9\t350\t20%\t否\t是",
+    "preview": "預覽",
+    "clear": "清除",
+    "previewOk": "可匯入 {{count}} 筆",
+    "previewErr": "{{count}} 筆錯誤",
+    "previewTruncated": "顯示前 {{shown}} 筆 (共 {{total}} 筆)",
+    "warningsHeader": "警告",
+    "row": "第",
+    "append": "附加",
+    "replace": "取代",
+    "cancel": "取消"
+  },
+  "summary": {
+    "title": "結果摘要",
+    "M": "材料總重 M (kg)",
+    "massMineral": "礦物總重 (kg)",
+    "massMetal": "金屬總重 (kg)",
+    "massGlass": "玻璃總重 (kg)",
+    "massWood": "木材總重 (kg)",
+    "massPlastic": "塑膠總重 (kg)",
+    "massOther": "其他總重 (kg)",
+    "CI_CON": "製造階段循環度 CI-CON",
+    "CI_USE": "使用階段循環度 CI-USE",
+    "CI_EOL": "拆除階段循環度 CI-EOL",
+    "MCIp": "材料循環度 MCIp",
+    "PCI": "構件循環度 PCI",
+    "SCIp": "系統循環度 SCIp",
+    "BCI": "建築循環度 BCI",
+    "baselineEC": "基準案碳排 (kgCO₂eq)",
+    "designEC": "設計案碳排 (kgCO₂eq)",
+    "reduction": "減碳量 (kgCO₂eq)",
+    "reductionRatio": "減碳比例",
+    "cost": "工程造價 (NT$)"
+  },
+  "dashboard": {
+    "byCategory": "各類別小計",
+    "category": "類別"
+  },
+  "tableGroups": {
+    "basic": "基本資料",
+    "materials": "材料組成",
+    "circularity": "循環手法與表現",
+    "destination": "物質去向",
+    "lcc": "生命週期成本 LCC"
+  },
+  "lcc": {
+    "cost": "工程造價",
+    "lccC1": "拆除費用",
+    "lccC2": "運送處理",
+    "lccD": "殘值",
+    "lccNominal": "終期淨成本",
+    "lccPV": "終期淨成本現值",
+    "scenarioA": "一般拆除",
+    "scenarioB": "綠色拆除",
+    "discountBase": "名目折現率 i = 5.2% (基準)",
+    "lifeNote": "壽命: 結構 60 / 外裝 30 / 內裝 20 年"
+  },
+  "analysis": {
+    "materialComposition": "材料組成",
+    "circularityIndices": "循環度指標",
+    "embodiedCarbon": "蘊含碳排",
+    "cost": "工程造價",
+    "costPerTonne": "每噸造價",
+    "costNoData": "尚未設定單價,請編輯模板 JSON 的 unitPrice 欄位",
+    "wasteFlow": "物質流向 (構造 → 材料 → 代碼)",
+    "lcc": "生命週期成本 LCC",
+    "LCCb": "建築生命週期成本 LCCb",
+    "totalNetCost": "終期淨成本 (元) = C₁ 拆除費 + 各代碼的處理費+運送−再生營收",
+    "netTotal": "淨",
+    "noMass": "尚無重量資料"
+  },
+  "waste": {
+    "wasteB5": "廢土方",
+    "wasteR1301": "廢鐵",
+    "wasteR1304": "廢鋁",
+    "wasteR0401": "廢玻璃",
+    "wasteR0701": "廢木材",
+    "wasteR0201": "廢塑膠",
+    "wasteR0503": "營建混合物"
+  }
+}

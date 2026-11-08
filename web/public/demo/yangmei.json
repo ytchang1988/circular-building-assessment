@@ -1,0 +1,2431 @@
+{
+  "name": "楊梅 RC 案 (範例)",
+  "sourceNote": "由 1-楊梅-RC/*.xlsx 選填表單 自動轉檔,2025-09 核算",
+  "meta": {
+    "name": "楊梅-RC 範例專案",
+    "buildingType": "RC",
+    "totalFloorArea": 55834,
+    "buildingClass": "低耗損建築 （自用辦公建築、倉庫、 住宅、住宿類建築）"
+  },
+  "columns": [
+    {
+      "floor": "",
+      "family": "1300x750",
+      "volumeM3": 442.61,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "1450x800",
+      "volumeM3": 58.04,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "1650x800",
+      "volumeM3": 108.35999999999999,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "400x600",
+      "volumeM3": 0.77,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x600",
+      "volumeM3": 2,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x650",
+      "volumeM3": 44.52999999999998,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650x600",
+      "volumeM3": 20.07,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650x650",
+      "volumeM3": 15.809999999999999,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "700x700",
+      "volumeM3": 87.71999999999996,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "900x1000",
+      "volumeM3": 129.58999999999997,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "900x1100",
+      "volumeM3": 52.71,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "900x1200",
+      "volumeM3": 144.7499999999999,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "900x1300",
+      "volumeM3": 29.000000000000007,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "900x1400",
+      "volumeM3": 49.61000000000001,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "900x900",
+      "volumeM3": 965.4999999999995,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "beams": [
+    {
+      "floor": "",
+      "family": "100X550",
+      "volumeM3": 0.5,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "100X850",
+      "volumeM3": 28.19000000000001,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "150X200",
+      "volumeM3": 0.43000000000000005,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "150X500",
+      "volumeM3": 0.33999999999999997,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "150X750",
+      "volumeM3": 0.5,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "150X800",
+      "volumeM3": 6.23,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "150X900",
+      "volumeM3": 1.12,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "150X950",
+      "volumeM3": 0.27,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X200",
+      "volumeM3": 0.09,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X386",
+      "volumeM3": 0.14,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200x400",
+      "volumeM3": 2.680000000000001,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X44",
+      "volumeM3": 0.08,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X49",
+      "volumeM3": 1.2900000000000005,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200x500",
+      "volumeM3": 9.33,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X700",
+      "volumeM3": 0.91,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X750",
+      "volumeM3": 0.69,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "200X800",
+      "volumeM3": 0.74,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "20X800",
+      "volumeM3": 0.13,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "217X460",
+      "volumeM3": 0.51,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "220X30",
+      "volumeM3": 0.06,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "220X300",
+      "volumeM3": 0.17,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250X17",
+      "volumeM3": 0.48000000000000015,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250X286",
+      "volumeM3": 0.76,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250X400",
+      "volumeM3": 0.44,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250X450",
+      "volumeM3": 0.17,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250X50",
+      "volumeM3": 1.7200000000000013,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250x500",
+      "volumeM3": 154.37999999999954,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "250X750",
+      "volumeM3": 0.65,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "300X200",
+      "volumeM3": 0.19,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "300X220",
+      "volumeM3": 1.55,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "300x400",
+      "volumeM3": 9.16,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "300x500",
+      "volumeM3": 5.700000000000001,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "300x600",
+      "volumeM3": 8.11,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "300X800",
+      "volumeM3": 0.56,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "350X200",
+      "volumeM3": 1.7700000000000002,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "350X450",
+      "volumeM3": 1.17,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "350x700",
+      "volumeM3": 1348.0200000000045,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "400x600",
+      "volumeM3": 12.040000000000001,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "400x700",
+      "volumeM3": 12.82,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X100",
+      "volumeM3": 0.09,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X150",
+      "volumeM3": 0.09,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X45",
+      "volumeM3": 0.32,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X450",
+      "volumeM3": 1.62,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X50",
+      "volumeM3": 0.06,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X500",
+      "volumeM3": 0.82,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500X600",
+      "volumeM3": 1.2,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500x700",
+      "volumeM3": 243.60999999999984,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500x750",
+      "volumeM3": 300.86999999999995,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500x800",
+      "volumeM3": 402.92000000000013,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "500x900",
+      "volumeM3": 48.73999999999999,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "50X550",
+      "volumeM3": 0.17,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "50X700",
+      "volumeM3": 0.38,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "50X750",
+      "volumeM3": 0.37,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "550X560",
+      "volumeM3": 0.68,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x1000",
+      "volumeM3": 191.65000000000006,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x3000",
+      "volumeM3": 691.1499999999996,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x700",
+      "volumeM3": 70.43999999999998,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x800",
+      "volumeM3": 1241.1599999999962,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "600x900",
+      "volumeM3": 130.72000000000003,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "60x500增築梁",
+      "volumeM3": 0.43,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650X200",
+      "volumeM3": 0.8400000000000001,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650X30",
+      "volumeM3": 2.3000000000000003,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650x3000",
+      "volumeM3": 27.6,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650X36",
+      "volumeM3": 33.56999999999996,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650X49",
+      "volumeM3": 1.7400000000000004,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650x700",
+      "volumeM3": 24.419999999999995,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650x850",
+      "volumeM3": 1359.279999999994,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "650x900",
+      "volumeM3": 108.27999999999999,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "700x3000",
+      "volumeM3": 43.26,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "700x500",
+      "volumeM3": 0.26,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "700x900",
+      "volumeM3": 9.7,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "70X750",
+      "volumeM3": 3.7699999999999996,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "800x1000",
+      "volumeM3": 87.09000000000002,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "800x3000",
+      "volumeM3": 1548.5300000000002,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "800X520",
+      "volumeM3": 6.28,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "800X800",
+      "volumeM3": 2.25,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "800x900",
+      "volumeM3": 54.44,
+      "concreteStrength": "結構用混凝土，預拌，350kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "slabs": [
+    {
+      "floor": "",
+      "family": "S100",
+      "volumeM3": 382.84,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S100(PC)",
+      "volumeM3": 27.69,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S100(PC)2",
+      "volumeM3": 1.1,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S100(PC)3",
+      "volumeM3": 20.99,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S100(PC)4",
+      "volumeM3": 3.09,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S1000",
+      "volumeM3": 885.9599999999997,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S150",
+      "volumeM3": 141.38000000000008,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S200",
+      "volumeM3": 1351.0000000000011,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S240",
+      "volumeM3": 504.4199999999997,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S250",
+      "volumeM3": 22.18,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S300",
+      "volumeM3": 40.32,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "S600",
+      "volumeM3": 1391.9900000000002,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "walls": [
+    {
+      "floor": "",
+      "family": "R140",
+      "volumeM3": 0.06,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R145",
+      "volumeM3": 2.4399999999999995,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150",
+      "volumeM3": 3022.950000000006,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 1",
+      "volumeM3": 17.289999999999996,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 10",
+      "volumeM3": 9.279999999999996,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 11",
+      "volumeM3": 8.319999999999997,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 12",
+      "volumeM3": 4.129999999999999,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 13",
+      "volumeM3": 3.3899999999999992,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 14",
+      "volumeM3": 1.9499999999999993,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 15",
+      "volumeM3": 1.5599999999999996,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 16",
+      "volumeM3": 3.6300000000000003,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 17",
+      "volumeM3": 0.99,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 18",
+      "volumeM3": 4.62,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 19",
+      "volumeM3": 7.590000000000001,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 2",
+      "volumeM3": 26.360000000000007,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 3",
+      "volumeM3": 11.25,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 4",
+      "volumeM3": 14.189999999999992,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 5",
+      "volumeM3": 11.039999999999996,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 6",
+      "volumeM3": 5.409999999999998,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 7",
+      "volumeM3": 5.939999999999998,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 8",
+      "volumeM3": 4.76,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R150 9",
+      "volumeM3": 1.9800000000000002,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R180",
+      "volumeM3": 281.53999999999985,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R200",
+      "volumeM3": 219.84999999999994,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R235",
+      "volumeM3": 12.259999999999996,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R240",
+      "volumeM3": 27.36,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R250",
+      "volumeM3": 99.29999999999995,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R300",
+      "volumeM3": 79.61999999999999,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R350",
+      "volumeM3": 7.23,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R400",
+      "volumeM3": 488.87,
+      "concreteStrength": "結構用混凝土，預拌，280kgf/cm2",
+      "admixturePct": 0.2,
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "cladding": [
+    {
+      "floor": "",
+      "family": "CT-1 二丁掛色平磚(白色)",
+      "areaM2": 5641.08,
+      "constructionType": "RC外牆貼磁磚(基準)",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-2 二丁掛平磚(灰色)",
+      "areaM2": 6651.779999999993,
+      "constructionType": "RC外牆貼磁磚(基準)",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-3 二丁掛平磚(深灰色)",
+      "areaM2": 3905.8600000000006,
+      "constructionType": "RC外牆貼磁磚(基準)",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "花崗石-15x60(景泰藍-水沖)-厚3CM-乾式掛件",
+      "areaM2": 27.890000000000015,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "花崗石-30x60(景泰藍-拋光)-厚3CM-乾式掛件",
+      "areaM2": 4.88,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "花崗石-60x60(景泰藍-拋光)-厚3CM-乾式掛件",
+      "areaM2": 424.34000000000043,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "外牆花崗石-60x119.3(夜明珠-拋光)-厚3CM-乾式掛件",
+      "areaM2": 212.63,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "外牆花崗石-90.3x70(夜明珠-拋光)-厚3CM-乾式掛件",
+      "areaM2": 9.48,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "外牆花崗石-60x119.3(景泰藍-拋光)-厚3CM-乾式掛件",
+      "areaM2": 394.9499999999997,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "外牆花崗石-90.3x70(景泰藍-拋光)-厚3CM-乾式掛件",
+      "areaM2": 21.9,
+      "constructionType": "RC外牆乾式鋼件掛石材",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "windows": [
+    {
+      "floor": "",
+      "family": "DW1a",
+      "areaM2": 442.4,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW1a-1",
+      "areaM2": 29.67,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW1b",
+      "areaM2": 963.7999999999981,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW1b-1",
+      "areaM2": 44.14,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW3a",
+      "areaM2": 15.06,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW3b",
+      "areaM2": 16.74,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW4",
+      "areaM2": 38.08,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW4a",
+      "areaM2": 39.89,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW5",
+      "areaM2": 109.5,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW6",
+      "areaM2": 84.86,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW6a",
+      "areaM2": 41.25,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW7",
+      "areaM2": 29.32,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "DW8",
+      "areaM2": 3.98,
+      "glass": "8mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "IW2",
+      "areaM2": 94.21000000000001,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "IW3a",
+      "areaM2": 8.6,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W1a",
+      "areaM2": 454.2999999999994,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W1a-1",
+      "areaM2": 53.01,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W1b",
+      "areaM2": 820.099999999998,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W1b-1",
+      "areaM2": 53.01,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2a",
+      "areaM2": 230.4499999999999,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2a-1",
+      "areaM2": 12.54,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2b",
+      "areaM2": 389.66999999999985,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2b-1",
+      "areaM2": 12.54,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2c",
+      "areaM2": 88.14,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2c-1",
+      "areaM2": 6.76,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2d",
+      "areaM2": 88.14,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W2d-1",
+      "areaM2": 6.76,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W3a",
+      "areaM2": 68.79999999999997,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W3a-1",
+      "areaM2": 5.13,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W3b",
+      "areaM2": 20.64,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W3b-1",
+      "areaM2": 5.13,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W3c",
+      "areaM2": 31.19999999999999,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W3d",
+      "areaM2": 31.19999999999999,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W5",
+      "areaM2": 49.7,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W5a",
+      "areaM2": 52.96,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W6 D=1200",
+      "areaM2": 33.32,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W7",
+      "areaM2": 128.68,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W8",
+      "areaM2": 148.95,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W9",
+      "areaM2": 30.29,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W10",
+      "areaM2": 12.9,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W11",
+      "areaM2": 25.73,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W12",
+      "areaM2": 47.78,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W13",
+      "areaM2": 49,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W4",
+      "areaM2": 428.7400000000001,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W4-1",
+      "areaM2": 34.12,
+      "glass": "6mm普通或吸熱玻璃",
+      "frame": "崁入式鋁框",
+      "reused": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "interiorWalls": [
+    {
+      "floor": "",
+      "family": "R100",
+      "areaM2": 293.17,
+      "note": "10",
+      "constructionType": "10公分RC隔間牆",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "R80",
+      "areaM2": 1.9900000000000002,
+      "note": "9.97",
+      "constructionType": "10公分RC隔間牆",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W100",
+      "areaM2": 2482.019999999994,
+      "note": "9.97",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W100-D",
+      "areaM2": 986.3899999999998,
+      "note": "9.99",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W100-E",
+      "areaM2": 1348.38,
+      "note": "9.98",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W100-F",
+      "areaM2": 135.27000000000004,
+      "note": "9.98",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W100-J",
+      "areaM2": 14.64,
+      "note": "9.92",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W103",
+      "areaM2": 15.05,
+      "note": "10",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W103-D",
+      "areaM2": 29.509999999999998,
+      "note": "10.01",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W120",
+      "areaM2": 7610.760000000005,
+      "note": "9.97",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W120-A",
+      "areaM2": 1033.5800000000002,
+      "note": "10",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W120-B",
+      "areaM2": 1641.3999999999992,
+      "note": "9.97",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W120-D",
+      "areaM2": 19.950000000000003,
+      "note": "9.97",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W120-F",
+      "areaM2": 14.28,
+      "note": "10.04",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W127",
+      "areaM2": 18.5,
+      "note": "10.02",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W130",
+      "areaM2": 81.34,
+      "note": "10.02",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W130-F",
+      "areaM2": 13.89,
+      "note": "10.04",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W136",
+      "areaM2": 238.56,
+      "note": "10",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W140",
+      "areaM2": 63.309999999999995,
+      "note": "10.04",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W145",
+      "areaM2": 385.59999999999997,
+      "note": "10.01",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W150",
+      "areaM2": 154.45,
+      "note": "10.06",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W150-D",
+      "areaM2": 14.96,
+      "note": "10",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W150-H",
+      "areaM2": 10.25,
+      "note": "10",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W250",
+      "areaM2": 116.33999999999999,
+      "note": "10.05",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "W250-B",
+      "areaM2": 28.409999999999997,
+      "note": "10.01",
+      "constructionType": "輕隔間牆（矽酸鈣板）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ],
+  "floors": [
+    {
+      "floor": "",
+      "family": "3F-15F梯廳、走廊無障礙導盲磚30x60cm-70mm",
+      "areaM2": 1.44,
+      "constructionType": "貼磁磚地坪（基準值）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "3F-15F梯廳、走廊霧面石英磚30x60cm(HQ63027)-70mm",
+      "areaM2": 650.439999999995,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "3F-15F梯廳、走廊霧面石英磚60x60cm(66L26)-70mm",
+      "areaM2": 1955.9499999999975,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "5mm環仰樹脂砂漿耐磨地坪",
+      "areaM2": 7510.489999999999,
+      "constructionType": "PU/Epoxy/壓花/硬化膜/壓克力樹脂/紙模版",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-1 二丁掛色平磚(白色)",
+      "areaM2": 280.0100000000002,
+      "constructionType": "貼磁磚地坪（基準值）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-2 二丁掛色平磚(灰色)",
+      "areaM2": 202.0299999999998,
+      "constructionType": "貼磁磚地坪（基準值）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-3 二丁掛色平磚(深灰色)",
+      "areaM2": 241.5900000000006,
+      "constructionType": "貼磁磚地坪（基準值）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-3-拋光石英磚600x600",
+      "areaM2": 9293.820000000014,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-6-防滑石英磚300x300(淺灰)",
+      "areaM2": 922.0399999999998,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "CT-6-防滑石英磚300x300(黃)",
+      "areaM2": 3031.43,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "實木集層材 - 4cm",
+      "areaM2": 13.550000000000004,
+      "constructionType": "水泥砂漿地坪+角材墊高平鋪實木板、美耐板地坪",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "水泥漆-深灰色",
+      "areaM2": 0.66,
+      "constructionType": "水泥砂漿地坪",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "水泥砂漿2cm",
+      "areaM2": 30.79,
+      "constructionType": "水泥砂漿地坪",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "水泥砂漿4cm",
+      "areaM2": 249.23000000000002,
+      "constructionType": "水泥砂漿地坪",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "花崗石-夜明珠(15*60cm)",
+      "areaM2": 10.679999999999994,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "花崗石-白玫瑰(15*60cm)",
+      "areaM2": 61.049999999999876,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "花崗石-白玫瑰(60*60cm)",
+      "areaM2": 587.29,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "鋁合金高架地板",
+      "areaM2": 61.19,
+      "constructionType": "水泥砂漿地坪+高架實木板、美耐板鋪作地坪",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "防滑地磚+防水材A(30*30cm)(43G24GA)-厚5cm",
+      "areaM2": 22.04,
+      "constructionType": "貼磁磚地坪（基準值）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "防滑地磚+防水材A(30*30cm)(43G24GA)-厚7cm",
+      "areaM2": 39.07000000000001,
+      "constructionType": "貼磁磚地坪（基準值）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "霧面石英磚45*60cm(HQ63027)",
+      "areaM2": 27.04,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "霧面石英磚60*60cm(66L26)",
+      "areaM2": 206.45000000000002,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "霧面石英磚60*60cm(66L26)-厚7cm-店舖",
+      "areaM2": 506.8,
+      "constructionType": "貼石材地坪（軟）",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    },
+    {
+      "floor": "",
+      "family": "鹽化鋼板",
+      "areaM2": 31.97,
+      "constructionType": "水泥砂漿地坪+高架超耐磨地板鋪作地坪",
+      "reused": false,
+      "greenRecycled": false,
+      "prefabModular": false,
+      "greenDemolition": false
+    }
+  ]
+}
