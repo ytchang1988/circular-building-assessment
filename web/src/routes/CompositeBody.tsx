@@ -13,6 +13,7 @@ import { WasteHeaders, WasteRowCells } from '@/components/WasteCells';
 import { LCCHeaders, LCCRowCells } from '@/components/LCCCells';
 import { TableGroupHeaders } from '@/components/TableGroupHeaders';
 import { AnalysisResults } from '@/components/AnalysisResults';
+import { InputGuide, type GuideRow } from '@/components/InputGuide';
 import type { AreaElement } from '@/engine/composite';
 
 function TriStateCheckbox({
@@ -147,6 +148,8 @@ export function CompositeBody({
         }
       />
 
+      <CompositeInputGuide />
+
       {selected.size > 0 && (
         <AreaBatchBar
           selectedCount={selected.size}
@@ -271,4 +274,23 @@ export function CompositeBody({
       )}
     </>
   );
+}
+
+function CompositeInputGuide() {
+  const { t } = useTranslation();
+  const rows: GuideRow[] = [
+    { k: 'floor', label: t('columns.headers.floor'), effect: t('columns.guide.floor') },
+    { k: 'family', label: t('columns.headers.family'), effect: t('columns.guide.family') },
+    { k: 'areaM2', label: t('composite.headers.areaM2'), effect: t('composite.guide.areaM2') },
+    { k: 'constructionType', label: t('composite.headers.constructionType'), effect: t('composite.guide.constructionType') },
+    { k: 'materialBreakdown',
+      label: t('columns.headers.massMineral') + ' / ' + t('columns.headers.massMetal') + ' / ' + t('columns.headers.massGlass') + ' / 其他',
+      effect: t('columns.guide.materialBreakdown') },
+    { k: 'reused', label: t('columns.headers.reused'), effect: t('columns.guide.reused') },
+    { k: 'greenRecycled', label: t('composite.headers.greenRecycled'), effect: t('composite.guide.greenRecycled') },
+    { k: 'prefabModular', label: t('columns.headers.prefabModular'), effect: t('columns.guide.prefabModular') },
+    { k: 'mcipPci', label: 'MCIp / PCI / EC', effect: t('columns.guide.mcipPci') },
+    { k: 'greenDemolition', label: t('columns.headers.greenDemolition'), effect: t('columns.guide.greenDemolition') },
+  ];
+  return <InputGuide rows={rows} />;
 }

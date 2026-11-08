@@ -12,6 +12,7 @@ import { WasteHeaders, WasteRowCells } from '@/components/WasteCells';
 import { LCCHeaders, LCCRowCells } from '@/components/LCCCells';
 import { TableGroupHeaders } from '@/components/TableGroupHeaders';
 import { AnalysisResults } from '@/components/AnalysisResults';
+import { InputGuide, type GuideRow } from '@/components/InputGuide';
 
 function TriStateCheckbox({
   checked, indeterminate, onChange,
@@ -145,6 +146,8 @@ export function WindowsBody() {
           )
         }
       />
+
+      <WindowsInputGuide />
 
       {selected.size > 0 && (
         <WindowBatchBar
@@ -363,3 +366,22 @@ function WinToggleGroup({ label, onYes, onNo }: {
   );
 }
 
+
+function WindowsInputGuide() {
+  const { t } = useTranslation();
+  const rows: GuideRow[] = [
+    { k: 'floor', label: t('columns.headers.floor'), effect: t('columns.guide.floor') },
+    { k: 'family', label: t('columns.headers.family'), effect: t('columns.guide.family') },
+    { k: 'areaM2', label: t('composite.headers.areaM2'), effect: t('windows.guide.areaM2') },
+    { k: 'glass', label: t('windows.headers.glass'), effect: t('windows.guide.glass') },
+    { k: 'frame', label: t('windows.headers.frame'), effect: t('windows.guide.frame') },
+    { k: 'materialBreakdown',
+      label: t('columns.headers.massGlass') + ' / ' + t('columns.headers.massMetal'),
+      effect: t('columns.guide.materialBreakdown') },
+    { k: 'reused', label: t('columns.headers.reused'), effect: t('columns.guide.reused') },
+    { k: 'prefabModular', label: t('columns.headers.prefabModular'), effect: t('columns.guide.prefabModular') },
+    { k: 'mcipPci', label: 'MCIp / PCI / EC', effect: t('columns.guide.mcipPci') },
+    { k: 'greenDemolition', label: t('columns.headers.greenDemolition'), effect: t('columns.guide.greenDemolition') },
+  ];
+  return <InputGuide rows={rows} />;
+}

@@ -30,11 +30,22 @@
     "headers": {
       "glass": "Glass type",
       "frame": "Frame type"
+    },
+    "guide": {
+      "areaM2": "Window area (m²), including both glass and frame. Mass = area × unit weight; EC = area × unit carbon.",
+      "glass": "Thickness and type (plain / tempered / reflective / Low-E, 6–12 mm). Drives weight, EC, replacement count, D residual.",
+      "frame": "Aluminum / vinyl / hardwood — determines metal sub-class (Al → R-1304) and unit cost."
     }
   },
   "lifecycle": {
     "buildingClassHint": "Set in Project → building class; affects layer life and lifecycle total weight/EC.",
-    "classMismatch": "Current building class not in this category's list"
+    "classMismatch": "Current building class not in this category's list",
+    "guide": {
+      "areaM2": "Element surface area (m²). Total mass = area × (updates+1) × construction unit weight; EC and cost scale the same way.",
+      "constructionType": "Pick from template (RC partition, calcium-silicate panel, tile floor, …). Drives unit weight, EC, FR, CR, and waste routing.",
+      "greenRecycled": "If checked, FR = construction's frGreen (typically 20–50%); otherwise FR = frNotGreen. Affects CI-CON only.",
+      "buildingClass": "Driven by Project → Building class: high-wear 2–3, mid 1–2, low 0–1 updates. Changes lifecycle mass, EC, and cost."
+    }
   },
   "project": {
     "name": "Project name",
@@ -103,7 +114,10 @@
       "massMetal": "Rebar mass = volume × rebar mass per m³ (default 314 kg/m³ ≈ 4% cross-section). Classified as metal.",
       "materialBreakdown": "RC categories only split into mineral (concrete) + metal (rebar); other categories classify by construction name keywords (aluminum/steel/glass/wood/plastic/paint) for now, template-level per-layer breakdown can be added later.",
       "reused": "If checked, FU = 100% → MCIp improves substantially.",
-      "prefabModular": "If checked, PCI × 1.1 bonus."
+      "prefabModular": "If checked, PCI × 1.1 bonus.",
+      "greenDemolition": "Activates sorted-demolition routing: aluminum/glass/wood/plastic go to their own codes; non-structural minerals → B5. Affects LCC C₁ (kB + f) and residual values.",
+      "mcipPci": "Computed automatically, no input needed.",
+      "ec": "Computed from the template's design vs baseline unit carbon, no input needed."
     },
     "batch": {
       "selected": "{{count}} selected",
@@ -117,6 +131,11 @@
       "areaM2": "Area (m²)",
       "constructionType": "Construction type",
       "greenRecycled": "Green recycled"
+    },
+    "guide": {
+      "areaM2": "Element surface area (m²). Mass = area × unit weight; EC and cost scale with area.",
+      "constructionType": "Pick from template (bundled RC + finish). Changes unit weight, FR, CR, unit EC, and material classification.",
+      "greenRecycled": "If checked, FR = construction's frWhenGreen (typically 15–20%), else 0. Affects CI-CON only, not EC."
     }
   },
   "importArea": {

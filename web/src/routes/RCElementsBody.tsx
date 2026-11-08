@@ -17,6 +17,7 @@ import { WasteHeaders, WasteRowCells } from '@/components/WasteCells';
 import { LCCHeaders, LCCRowCells } from '@/components/LCCCells';
 import { TableGroupHeaders } from '@/components/TableGroupHeaders';
 import { AnalysisResults } from '@/components/AnalysisResults';
+import { InputGuide, type GuideRow } from '@/components/InputGuide';
 
 function TriStateCheckbox({
   checked,
@@ -174,7 +175,7 @@ export function RCElementsBody({
         }
       />
 
-      <InputGuide />
+      <RCInputGuide />
 
       {selected.size > 0 && (
         <BatchActionBar
@@ -318,9 +319,9 @@ export function RCElementsBody({
   );
 }
 
-function InputGuide() {
+function RCInputGuide() {
   const { t } = useTranslation();
-  const rows = [
+  const rows: GuideRow[] = [
     { k: 'floor', label: t('columns.headers.floor'), effect: t('columns.guide.floor') },
     { k: 'family', label: t('columns.headers.family'), effect: t('columns.guide.family') },
     { k: 'volume', label: t('columns.headers.volumeM3'), effect: t('columns.guide.volume') },
@@ -331,24 +332,9 @@ function InputGuide() {
     { k: 'materialBreakdown', label: t('columns.headers.massGlass') + '/' + t('columns.headers.massWood') + '/' + t('columns.headers.massPlastic') + '/' + t('columns.headers.massOther'), effect: t('columns.guide.materialBreakdown') },
     { k: 'reused', label: t('columns.headers.reused'), effect: t('columns.guide.reused') },
     { k: 'prefabModular', label: t('columns.headers.prefabModular'), effect: t('columns.guide.prefabModular') },
+    { k: 'greenDemolition', label: t('columns.headers.greenDemolition'), effect: t('columns.guide.greenDemolition') },
   ];
-  return (
-    <details className="mb-4 rounded-md border border-slate-200 bg-white" open>
-      <summary className="cursor-pointer select-none px-4 py-2 text-sm font-medium text-slate-700">
-        {t('columns.guide.title')}
-      </summary>
-      <div className="border-t border-slate-200 px-4 py-3">
-        <dl className="grid gap-x-6 gap-y-2 text-xs sm:grid-cols-2">
-          {rows.map(({ k, label, effect }) => (
-            <div key={k} className="flex gap-2">
-              <dt className="min-w-[8rem] font-medium text-slate-700">{label}</dt>
-              <dd className="text-slate-600">{effect}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </details>
-  );
+  return <InputGuide rows={rows} />;
 }
 
 function BatchActionBar({

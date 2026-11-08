@@ -28,6 +28,7 @@ import { WasteHeaders, WasteRowCells } from '@/components/WasteCells';
 import { LCCHeaders, LCCRowCells } from '@/components/LCCCells';
 import { TableGroupHeaders } from '@/components/TableGroupHeaders';
 import { AnalysisResults } from '@/components/AnalysisResults';
+import { InputGuide, type GuideRow } from '@/components/InputGuide';
 
 function TriStateCheckbox({
   checked, indeterminate, onChange,
@@ -201,6 +202,8 @@ export function LifecycleBody({ category }: { category: LifecycleCategory }) {
         )}
       </div>
 
+      <LifecycleInputGuide />
+
       {selected.size > 0 && (
         <AreaBatchBar
           selectedCount={selected.size}
@@ -325,4 +328,24 @@ export function LifecycleBody({ category }: { category: LifecycleCategory }) {
       )}
     </>
   );
+}
+
+function LifecycleInputGuide() {
+  const { t } = useTranslation();
+  const rows: GuideRow[] = [
+    { k: 'buildingClass', label: t('project.buildingClass'), effect: t('lifecycle.guide.buildingClass') },
+    { k: 'floor', label: t('columns.headers.floor'), effect: t('columns.guide.floor') },
+    { k: 'family', label: t('columns.headers.family'), effect: t('columns.guide.family') },
+    { k: 'areaM2', label: t('composite.headers.areaM2'), effect: t('lifecycle.guide.areaM2') },
+    { k: 'constructionType', label: t('composite.headers.constructionType'), effect: t('lifecycle.guide.constructionType') },
+    { k: 'materialBreakdown',
+      label: t('columns.headers.massMineral') + ' / ' + t('columns.headers.massMetal') + ' / 其他',
+      effect: t('columns.guide.materialBreakdown') },
+    { k: 'reused', label: t('columns.headers.reused'), effect: t('columns.guide.reused') },
+    { k: 'greenRecycled', label: t('composite.headers.greenRecycled'), effect: t('lifecycle.guide.greenRecycled') },
+    { k: 'prefabModular', label: t('columns.headers.prefabModular'), effect: t('columns.guide.prefabModular') },
+    { k: 'mcipPci', label: 'MCIp / PCI / EC', effect: t('columns.guide.mcipPci') },
+    { k: 'greenDemolition', label: t('columns.headers.greenDemolition'), effect: t('columns.guide.greenDemolition') },
+  ];
+  return <InputGuide rows={rows} />;
 }
