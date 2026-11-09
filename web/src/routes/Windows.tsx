@@ -2,7 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRowSelection, eventShiftKey } from '@/lib/useRowSelection';
 import { useTranslation } from 'react-i18next';
 import { useProject } from '@/store/project';
-import { aggregateComponent, buildSankeyFlows, computeWindowElement } from '@/engine';
+import {
+  aggregateComponent,
+  aggregateLCCScenario,
+  buildSankeyFlows,
+  computeWindowElement,
+  type LCCItem,
+} from '@/engine';
 import type { WindowElement } from '@/engine/windows';
 import { WINDOWS_TEMPLATE } from '@/templates/RC/allRegistry';
 import { fmtInt, fmtNum } from '@/lib/format';
@@ -48,7 +54,7 @@ export function WindowsBody() {
     [],
   );
 
-  const { perElement, summary, flows } = useMemo(() => {
+  const { perElement, summary, flows, lccScenarios } = useMemo(() => {
     const perElement = elements.map((el) => {
       try {
         return { ok: true as const, result: computeWindowElement(el, WINDOWS_TEMPLATE) };
@@ -68,10 +74,21 @@ export function WindowsBody() {
         result: p.r.result,
       })),
     );
+    const lccItems: LCCItem[] = okPairs.map((p) => ({
+      green: p.el.greenDemolition,
+      hints: p.el.frame || '',
+      isStructural: false,
+      layer: '外裝',
+      mat: p.r.result,
+    }));
     return {
       perElement,
       summary: aggregateComponent(WINDOWS_TEMPLATE.category, okPairs.map((p) => p.r.result)),
       flows,
+      lccScenarios: {
+        current:  aggregateLCCScenario(lccItems),
+        standard: aggregateLCCScenario(lccItems, false),
+      },
     };
   }, [elements]);
 
@@ -274,7 +291,7 @@ export function WindowsBody() {
           <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
             {t('columns.analysisResults')}
           </h3>
-          <AnalysisResults summary={summary} flows={flows} />
+          <AnalysisResults summary={summary} flows={flows} lccScenarios={lccScenarios} />
         </div>
       )}
     </>

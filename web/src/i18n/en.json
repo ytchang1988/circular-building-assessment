@@ -222,6 +222,12 @@
     "LCCb": "Building life-cycle cost LCCb",
     "totalNetCost": "Terminal net (NT$) = C₁ demolition + each code (handling + transport − residual)",
     "netTotal": "Net",
+    "scenarioCompare": "Scenario comparison — nominal terminal net",
+    "scenarioCompareHint": "Standard vs configured demolition; lower is better",
+    "scenarioStandard": "Standard demolition",
+    "scenarioConfigured": "As configured",
+    "scenarioDelta": "Scenario delta (NT$)",
+    "scenarioDeltaRatio": "Delta ratio",
     "noMass": "No mass data yet"
   },
   "waste": {

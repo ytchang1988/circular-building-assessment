@@ -2,9 +2,10 @@ import { Fragment, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useProject } from '@/store/project';
 import {
-  aggregateBuilding, aggregateComponent, buildSankeyFlows,
+  aggregateBuilding, aggregateComponent, aggregateLCCScenario, buildSankeyFlows,
   computeAreaElement, computeColumnElement,
   computeFloorElement, computeInteriorWallElement, computeWindowElement,
+  type LCCItem,
 } from '@/engine';
 import type { ComponentResult, ElementResult } from '@/engine/types';
 import type { SankeyItem } from '@/engine/sankey';
@@ -24,9 +25,10 @@ export function DashboardRoute() {
   const lifecycleElements = useProject((s) => s.lifecycleElements);
   const buildingClass = useProject((s) => s.meta.buildingClass);
 
-  const { building, perCategory, buildingSummary, flows } = useMemo(() => {
+  const { building, perCategory, buildingSummary, flows, lccScenarios } = useMemo(() => {
     const rows: Array<{ cat: AnyCategory; result: ComponentResult }> = [];
     const sankeyItems: SankeyItem[] = [];
+    const lccItems: LCCItem[] = [];
 
     // ---- RC mono categories (columns / beams / slabs / walls — treated as
     //      structural RC: mineral → B5 in both scenarios).
@@ -41,6 +43,10 @@ export function DashboardRoute() {
           sankeyItems.push({
             source, green: el.greenDemolition, hints: '鋼筋',
             isStructural: true, result,
+          });
+          lccItems.push({
+            green: el.greenDemolition, hints: '鋼筋',
+            isStructural: true, layer: '結構', mat: result,
           });
         } catch { /* skip bad element */ }
       }
@@ -62,6 +68,13 @@ export function DashboardRoute() {
             isStructural: false,
             result,
           });
+          lccItems.push({
+            green: el.greenDemolition,
+            hints: el.constructionType || '',
+            isStructural: false,
+            layer: '外裝',
+            mat: result,
+          });
         } catch { /* skip */ }
       }
       rows.push({ cat: 'cladding', result: aggregateComponent(CLADDING_TEMPLATE.category, okResults) });
@@ -81,6 +94,13 @@ export function DashboardRoute() {
             hints: el.frame || '',
             isStructural: false,
             result,
+          });
+          lccItems.push({
+            green: el.greenDemolition,
+            hints: el.frame || '',
+            isStructural: false,
+            layer: '外裝',
+            mat: result,
           });
         } catch { /* skip */ }
       }
@@ -102,6 +122,13 @@ export function DashboardRoute() {
             isStructural: false,
             result,
           });
+          lccItems.push({
+            green: el.greenDemolition,
+            hints: el.constructionType || '',
+            isStructural: false,
+            layer: '內裝',
+            mat: result,
+          });
         } catch { /* skip */ }
       }
       rows.push({ cat: 'interiorWalls', result: aggregateComponent(INTERIOR_WALLS_TEMPLATE.category, okResults) });
@@ -119,6 +146,13 @@ export function DashboardRoute() {
             hints: el.constructionType || '',
             isStructural: false,
             result,
+          });
+          lccItems.push({
+            green: el.greenDemolition,
+            hints: el.constructionType || '',
+            isStructural: false,
+            layer: '內裝',
+            mat: result,
           });
         } catch { /* skip */ }
       }
@@ -166,7 +200,11 @@ export function DashboardRoute() {
     };
 
     const flows = buildSankeyFlows(sankeyItems);
-    return { building, perCategory: rows, buildingSummary, flows };
+    const lccScenarios = {
+      current:  aggregateLCCScenario(lccItems),
+      standard: aggregateLCCScenario(lccItems, false),
+    };
+    return { building, perCategory: rows, buildingSummary, flows, lccScenarios };
   }, [elements, areaElements, windowElements, lifecycleElements, buildingClass, t]);
 
   const groupedRows: Array<{ groupKey: 'structure' | 'envelope' | 'interior'; cats: typeof perCategory }> = [
@@ -246,7 +284,7 @@ export function DashboardRoute() {
       {/* 2. Analysis sections (mirror of category pages): material composition,
              circularity indices, embodied carbon, material-flow Sankey. */}
       <div className="mt-8">
-        <AnalysisResults summary={buildingSummary} flows={flows} />
+        <AnalysisResults summary={buildingSummary} flows={flows} lccScenarios={lccScenarios} />
       </div>
     </section>
   );

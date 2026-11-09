@@ -21,7 +21,8 @@
  *   wasteR0503 → R-0503
  */
 
-import type { WasteBreakdown, WasteKey } from './waste';
+import type { MaterialBucket } from './materialClassify';
+import { computeWaste, type WasteBreakdown, type WasteKey } from './waste';
 
 /** Building component layer; drives discount lifetime t. */
 export type LCCLayer = '結構' | '外裝' | '內裝';
@@ -125,4 +126,70 @@ export function computeLCC(
   const PV = nominal / Math.pow(1 + r, life);
 
   return { C1, C2t, C2p, D, nominal, PV };
+}
+
+// ---------------------------------------------------------------------------
+// Scenario comparison (一般拆除 vs 當前設定)
+// ---------------------------------------------------------------------------
+
+/**
+ * Per-element input for an aggregated LCC scenario rollup. The caller provides
+ * the as-configured `green` flag; `aggregateLCCScenario` may override it when
+ * computing the all-standard-demolition counterfactual. `mat` is the material
+ * breakdown (ElementResult already satisfies this shape structurally).
+ */
+export interface LCCItem {
+  green: boolean;
+  hints: string;
+  isStructural: boolean;
+  layer: LCCLayer;
+  mat: Record<MaterialBucket, number>;
+}
+
+/** Aggregated LCC terminal values across a scenario (matches ComponentResult's
+ *  lcc* fields; `C2` combines transport C2t and handling C2p). Also carries
+ *  the per-waste-code mass breakdown under this scenario so downstream charts
+ *  (e.g. the terminal-net waterfall) can draw with the right routing. */
+export interface LCCScenarioAgg {
+  C1: number;
+  C2: number;
+  D: number;
+  nominal: number;
+  PV: number;
+  waste: WasteBreakdown;
+}
+
+/**
+ * Sum LCC across a set of elements under a chosen scenario.
+ *
+ * - `forceGreen === undefined` → each element uses its own `green` flag
+ *   (reproduces the as-configured ComponentResult totals).
+ * - `forceGreen === false`     → the 一般拆除 counterfactual (everyone mixes).
+ * - `forceGreen === true`      → the 全綠色拆除 counterfactual.
+ *
+ * Material masses are re-routed to waste codes under the chosen scenario so
+ * the LCC parameters (k, f, c2, d, km) line up with the right waste streams.
+ */
+export function aggregateLCCScenario(
+  items: LCCItem[],
+  forceGreen?: boolean,
+  iRate = LCC_PARAMS.discount.base,
+): LCCScenarioAgg {
+  let C1 = 0, C2 = 0, D = 0, nominal = 0, PV = 0;
+  const wasteAgg: WasteBreakdown = {
+    wasteB5: 0, wasteR1301: 0, wasteR1304: 0,
+    wasteR0401: 0, wasteR0701: 0, wasteR0201: 0, wasteR0503: 0,
+  };
+  for (const it of items) {
+    const green = forceGreen ?? it.green;
+    const waste = computeWaste(it.mat, green, it.hints, it.isStructural);
+    for (const wk of Object.keys(waste) as WasteKey[]) wasteAgg[wk] += waste[wk];
+    const r = computeLCC(waste, green, it.layer, iRate);
+    C1 += r.C1;
+    C2 += r.C2t + r.C2p;
+    D  += r.D;
+    nominal += r.nominal;
+    PV += r.PV;
+  }
+  return { C1, C2, D, nominal, PV, waste: wasteAgg };
 }

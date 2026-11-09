@@ -2,7 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRowSelection, eventShiftKey } from '@/lib/useRowSelection';
 import { useTranslation } from 'react-i18next';
 import { useProject } from '@/store/project';
-import { aggregateComponent, buildSankeyFlows, computeAreaElement } from '@/engine';
+import {
+  aggregateComponent,
+  aggregateLCCScenario,
+  buildSankeyFlows,
+  computeAreaElement,
+  type LCCItem,
+} from '@/engine';
 import type { CompositeTemplate } from '@/engine/composite';
 import { fmtInt, fmtNum } from '@/lib/format';
 import type { CompositeCategoryKey } from '@/templates/RC/compositeRegistry';
@@ -57,7 +63,7 @@ export function CompositeBody({
 
   useEffect(() => { clearSelection(); }, [category, clearSelection]);
 
-  const { perElement, summary, flows } = useMemo(() => {
+  const { perElement, summary, flows, lccScenarios } = useMemo(() => {
     const perElement = elements.map((el) => {
       try {
         return { ok: true as const, result: computeAreaElement(el, template) };
@@ -77,10 +83,21 @@ export function CompositeBody({
         result: p.r.result,
       })),
     );
+    const lccItems: LCCItem[] = okPairs.map((p) => ({
+      green: p.el.greenDemolition,
+      hints: p.el.constructionType || '',
+      isStructural: false,
+      layer: '外裝',
+      mat: p.r.result,
+    }));
     return {
       perElement,
       summary: aggregateComponent(template.category, okPairs.map((p) => p.r.result)),
       flows,
+      lccScenarios: {
+        current:  aggregateLCCScenario(lccItems),
+        standard: aggregateLCCScenario(lccItems, false),
+      },
     };
   }, [elements, template]);
 
@@ -269,7 +286,7 @@ export function CompositeBody({
           <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
             {t('columns.analysisResults')}
           </h3>
-          <AnalysisResults summary={summary} flows={flows} />
+          <AnalysisResults summary={summary} flows={flows} lccScenarios={lccScenarios} />
         </div>
       )}
     </>

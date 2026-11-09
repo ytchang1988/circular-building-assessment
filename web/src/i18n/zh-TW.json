@@ -222,6 +222,12 @@
     "LCCb": "建築生命週期成本 LCCb",
     "totalNetCost": "終期淨成本 (元) = C₁ 拆除費 + 各代碼的處理費+運送−再生營收",
     "netTotal": "淨",
+    "scenarioCompare": "情境對照 — 終期淨成本 (名目)",
+    "scenarioCompareHint": "一般拆除 vs 當前設定,越低越好",
+    "scenarioStandard": "一般拆除情境",
+    "scenarioConfigured": "當前設定情境",
+    "scenarioDelta": "情境差額 (元)",
+    "scenarioDeltaRatio": "差額比例",
     "noMass": "尚無重量資料"
   },
   "waste": {

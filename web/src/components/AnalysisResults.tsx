@@ -18,7 +18,7 @@ import type { ComponentResult } from '@/engine/types';
 import type { MaterialBucket } from '@/engine/materialClassify';
 import type { SankeyFlow } from '@/engine/sankey';
 import type { WasteKey } from '@/engine/waste';
-import { LCC_PARAMS } from '@/engine/lcc';
+import { LCC_PARAMS, type LCCScenarioAgg } from '@/engine/lcc';
 import { fmtInt, fmtNum, fmtPct } from '@/lib/format';
 
 const MATERIAL_KEYS = [
@@ -62,9 +62,12 @@ const CI_KEYS = ['CI_CON', 'CI_USE', 'CI_EOL', 'MCIp', 'PCI', 'SCIp'] as const;
 export function AnalysisResults({
   summary,
   flows,
+  lccScenarios,
 }: {
   summary: ComponentResult;
   flows?: SankeyFlow[];
+  /** Optional comparison: {current} = 當前設定, {standard} = 一般拆除情境. */
+  lccScenarios?: { current: LCCScenarioAgg; standard: LCCScenarioAgg };
 }) {
   const { t } = useTranslation();
 
@@ -218,7 +221,7 @@ export function AnalysisResults({
       {flows && flows.length > 0 && <WasteFlowSankey flows={flows} />}
 
       {/* 5. Life-cycle cost (LCC) */}
-      <LCCSection summary={summary} />
+      <LCCSection summary={summary} scenarios={lccScenarios} />
     </div>
   );
 }
@@ -401,7 +404,13 @@ function SankeyLinkShape(props: unknown) {
  * Per spec §6.1 the three ratios MUST be shown together (showing only the
  * material-recovery rate leads to opposite rankings — see 沙崙 vs 楊梅).
  */
-function LCCSection({ summary }: { summary: ComponentResult }) {
+function LCCSection({
+  summary,
+  scenarios,
+}: {
+  summary: ComponentResult;
+  scenarios?: { current: LCCScenarioAgg; standard: LCCScenarioAgg };
+}) {
   const { t } = useTranslation();
   const hasLCC = summary.lccNominal !== 0 || summary.lccPV !== 0;
   if (!hasLCC && summary.cost === 0) return null;
@@ -442,10 +451,11 @@ function LCCSection({ summary }: { summary: ComponentResult }) {
         <SignedTile label={t('lcc.lccPV')}              value={summary.lccPV} />
       </div>
 
-      {/* Waterfall: per-kg terminal net cost decomposed into C₁ + each waste
-          code's (處理 + 運送 − 殘值). Dashed line marks the net. */}
+      {/* Waterfall: per-code terminal net cost. When scenarios are supplied the
+          chart shows two stacked rows (一般拆除情境 / 當前設定情境) on a shared
+          scale so the configuration gain/loss is read directly off the bars. */}
       <div className="border-t border-slate-100 pt-4">
-        <PerKgNetCostWaterfall summary={summary} />
+        <NetCostWaterfall summary={summary} scenarios={scenarios} />
       </div>
     </section>
   );
@@ -522,28 +532,23 @@ const WASTE_PALETTE: Record<WasteKey, string> = {
   wasteR0201: '#f59e0b',
 };
 
-function PerKgNetCostWaterfall({ summary }: { summary: ComponentResult }) {
-  const { t } = useTranslation();
-  if (summary.M <= 0) return null;
-
-  // Total C₁ (NT$). The aggregate already respects each element's
-  // green-demolition flag + per-category f surcharge.
-  const c1Total = summary.lccC1;
-
-  // Per-category signed total contribution (NT$):
-  //   unit = C₂處(c2) + C₂運(km × 8 / 1000) − D(d)   (NT$/kg)
-  //   total = unit × mass_in_cat
+/** One row of the terminal-net waterfall for a given scenario. Returns the
+ *  computed segments and net so a parent can pool scales across scenarios. */
+function buildWaterfallSegs(
+  c1Total: number,
+  wasteByCode: Record<WasteKey, number>,
+  c1Label: string,
+): { segs: { key: string; label: string; color: string; contribution: number; start: number; end: number }[]; net: number } {
   const wasteKeys: WasteKey[] = [
     'wasteB5', 'wasteR0503', 'wasteR1301', 'wasteR1304',
     'wasteR0401', 'wasteR0701', 'wasteR0201',
   ];
   const catContribs = wasteKeys
     .map((wk) => {
-      const mass = summary[wk];
+      const mass = wasteByCode[wk];
       if (mass <= 0) return null;
       const p = LCC_PARAMS.categories[WASTE_TO_LCC[wk]];
-      const unit =
-        p.c2 + (p.km * LCC_PARAMS.truckRate) / 1000 - p.d;
+      const unit = p.c2 + (p.km * LCC_PARAMS.truckRate) / 1000 - p.d;
       return {
         key: wk,
         label: WASTE_LABEL[wk],
@@ -553,39 +558,121 @@ function PerKgNetCostWaterfall({ summary }: { summary: ComponentResult }) {
     })
     .filter((x): x is NonNullable<typeof x> => x !== null);
 
-  // Items drawn in waterfall order (C₁ first, then negatives, then positives).
-  // Grouping makes the chart read cleanly from zero outward in each direction.
   const positives = catContribs.filter((c) => c.contribution > 0);
   const negatives = catContribs.filter((c) => c.contribution < 0);
   const items = [
-    { key: 'c1', label: 'C₁ ' + t('lcc.lccC1'), color: '#fb923c', contribution: c1Total },
+    { key: 'c1', label: c1Label, color: '#fb923c', contribution: c1Total },
     ...negatives.sort((a, b) => a.contribution - b.contribution),
     ...positives.sort((a, b) => b.contribution - a.contribution),
   ];
 
-  // Running cumulative to drive segment start/end positions.
-  // Final cursor = summary.lccNominal (= C₁ + C₂ − D).
   let cursor = 0;
   const segs = items.map((it) => {
     const start = cursor;
     cursor += it.contribution;
     return { ...it, start, end: cursor };
   });
-  const net = cursor;
+  return { segs, net: cursor };
+}
 
-  // Scale: cover the full extent covered by any segment, plus net.
-  const minVal = Math.min(0, ...segs.map((s) => Math.min(s.start, s.end)), net);
-  const maxVal = Math.max(0, ...segs.map((s) => Math.max(s.start, s.end)), net);
+/**
+ * Horizontal terminal-net waterfall. When `scenarios` is supplied, draws two
+ * rows (一般拆除情境 / 當前設定情境) on a shared X-scale so the configuration
+ * gain/loss reads directly off the bar positions and the net markers.
+ */
+function NetCostWaterfall({
+  summary,
+  scenarios,
+}: {
+  summary: ComponentResult;
+  scenarios?: { current: LCCScenarioAgg; standard: LCCScenarioAgg };
+}) {
+  const { t } = useTranslation();
+  if (summary.M <= 0) return null;
+
+  const c1Label = 'C₁ ' + t('lcc.lccC1');
+
+  // Build the per-scenario rows. Without `scenarios` fall back to a single
+  // row sourced from `summary` (preserves prior behaviour for consumers that
+  // haven't wired the scenario comparison yet).
+  type Row = {
+    key: string;
+    label: string;
+    segs: ReturnType<typeof buildWaterfallSegs>['segs'];
+    net: number;
+  };
+  const rows: Row[] = scenarios
+    ? [
+        (() => {
+          const { segs, net } = buildWaterfallSegs(
+            scenarios.standard.C1, scenarios.standard.waste, c1Label,
+          );
+          return { key: 'standard', label: t('analysis.scenarioStandard'), segs, net };
+        })(),
+        (() => {
+          const { segs, net } = buildWaterfallSegs(
+            scenarios.current.C1, scenarios.current.waste, c1Label,
+          );
+          return { key: 'current', label: t('analysis.scenarioConfigured'), segs, net };
+        })(),
+      ]
+    : [
+        (() => {
+          const wasteMap: Record<WasteKey, number> = {
+            wasteB5: summary.wasteB5, wasteR1301: summary.wasteR1301,
+            wasteR1304: summary.wasteR1304, wasteR0401: summary.wasteR0401,
+            wasteR0701: summary.wasteR0701, wasteR0201: summary.wasteR0201,
+            wasteR0503: summary.wasteR0503,
+          };
+          const { segs, net } = buildWaterfallSegs(summary.lccC1, wasteMap, c1Label);
+          return { key: 'only', label: '', segs, net };
+        })(),
+      ];
+
+  // Shared scale: envelope every segment and every net marker across rows.
+  const allXs: number[] = [0];
+  for (const r of rows) {
+    allXs.push(r.net);
+    for (const s of r.segs) { allXs.push(s.start); allXs.push(s.end); }
+  }
+  const minVal = Math.min(...allXs);
+  const maxVal = Math.max(...allXs);
   const span = Math.max(1e-9, maxVal - minVal);
   const padFrac = 0.05;
   const vbMin = minVal - span * padFrac;
   const vbMax = maxVal + span * padFrac;
   const vbSpan = vbMax - vbMin;
 
-  const W = 800, H = 110;
-  const barY = 30, barH = 28;
+  const W = 800;
+  const rowH = 70;      // height per scenario row
+  const topPad = 14;    // for '0' label above the zero line
+  const bottomPad = 18; // for the net label
+  const H = rows.length * rowH + topPad + bottomPad;
+  const barH = 28;
   const zeroX = ((0 - vbMin) / vbSpan) * W;
-  const netX = ((net - vbMin) / vbSpan) * W;
+
+  // Scenario delta (when both scenarios present): current − standard (nominal).
+  const current = scenarios?.current.nominal;
+  const standard = scenarios?.standard.nominal;
+  const delta = current !== undefined && standard !== undefined ? current - standard : undefined;
+  const deltaRatio =
+    delta !== undefined && standard !== undefined && standard !== 0
+      ? delta / Math.abs(standard)
+      : undefined;
+  const deltaGood = delta !== undefined && delta < 0;
+
+  // Union of waste codes used across rows → stable legend. C₁ is rendered
+  // separately below, so skip it here to avoid a duplicate chip.
+  const legendSegs: { key: string; label: string; color: string }[] = [];
+  const legendSeen = new Set<string>(['c1']);
+  for (const r of rows) {
+    for (const s of r.segs) {
+      if (!legendSeen.has(s.key)) {
+        legendSeen.add(s.key);
+        legendSegs.push({ key: s.key, label: s.label, color: s.color });
+      }
+    }
+  }
 
   return (
     <div className="space-y-3">
@@ -593,63 +680,86 @@ function PerKgNetCostWaterfall({ summary }: { summary: ComponentResult }) {
         <div className="text-xs font-medium text-slate-600">
           {t('analysis.totalNetCost')}
         </div>
-        <div className="flex items-baseline gap-2">
-          <span className="text-xs text-slate-500">{t('analysis.netTotal')}</span>
-          <span className={`text-xl font-bold tabular-nums ${
-            net < 0 ? 'text-emerald-600' : net > 0 ? 'text-rose-600' : 'text-slate-400'
-          }`}>
-            {net === 0 ? '—' : `${net > 0 ? '+' : ''}${fmtInt(net)}`}
-          </span>
-          <span className="text-xs text-slate-500">NT$</span>
-        </div>
+        {delta !== undefined && (
+          <div className="flex items-baseline gap-2">
+            <span className="text-xs text-slate-500">{t('analysis.scenarioDelta')}</span>
+            <span className={`text-xl font-bold tabular-nums ${
+              deltaGood ? 'text-emerald-600' : delta === 0 ? 'text-slate-400' : 'text-rose-600'
+            }`}>
+              {delta > 0 ? '+' : ''}{fmtInt(delta)}
+            </span>
+            <span className="text-xs text-slate-500">NT$</span>
+            {deltaRatio !== undefined && (
+              <span className={`ml-1 text-xs tabular-nums ${
+                deltaGood ? 'text-emerald-600' : delta === 0 ? 'text-slate-400' : 'text-rose-600'
+              }`}>
+                ({delta > 0 ? '+' : ''}{fmtPct(deltaRatio)})
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" preserveAspectRatio="none">
-        {/* Zero reference line */}
-        <line x1={zeroX} y1={10} x2={zeroX} y2={H - 10}
+        {/* Zero reference line spans all rows */}
+        <line x1={zeroX} y1={topPad} x2={zeroX} y2={H - bottomPad}
               stroke="#cbd5e1" strokeWidth={1} />
-        <text x={zeroX} y={8} fontSize={10} fill="#94a3b8" textAnchor="middle">0</text>
+        <text x={zeroX} y={topPad - 4} fontSize={10} fill="#94a3b8" textAnchor="middle">0</text>
 
-        {/* Segments */}
-        {segs.map((s) => {
-          const x0 = ((s.start - vbMin) / vbSpan) * W;
-          const x1 = ((s.end   - vbMin) / vbSpan) * W;
-          const x  = Math.min(x0, x1);
-          const w  = Math.abs(x1 - x0);
-          if (w < 0.5) return null;
+        {rows.map((r, rowIdx) => {
+          const rowTop = topPad + rowIdx * rowH;
+          const labelY = rowTop + 10;
+          const barY = rowTop + 18;
+          const netX = ((r.net - vbMin) / vbSpan) * W;
+          const netColor = r.net < 0 ? '#059669' : r.net > 0 ? '#e11d48' : '#94a3b8';
           return (
-            <g key={s.key}>
-              <rect x={x} y={barY} width={w} height={barH}
-                    fill={s.color} stroke="#ffffff" strokeWidth={0.5}>
-                <title>{`${s.label}: ${s.contribution > 0 ? '+' : ''}${fmtInt(s.contribution)} NT$`}</title>
-              </rect>
+            <g key={r.key}>
+              {/* Row label (left-aligned at viewbox edge) */}
+              {r.label && (
+                <text x={6} y={labelY} fontSize={11} fontWeight={600} fill="#475569">
+                  {r.label}
+                </text>
+              )}
+              {/* Segments */}
+              {r.segs.map((s) => {
+                const x0 = ((s.start - vbMin) / vbSpan) * W;
+                const x1 = ((s.end   - vbMin) / vbSpan) * W;
+                const x  = Math.min(x0, x1);
+                const w  = Math.abs(x1 - x0);
+                if (w < 0.5) return null;
+                return (
+                  <rect key={s.key} x={x} y={barY} width={w} height={barH}
+                        fill={s.color} stroke="#ffffff" strokeWidth={0.5}>
+                    <title>{`${r.label || ''}${r.label ? ' · ' : ''}${s.label}: ${s.contribution > 0 ? '+' : ''}${fmtInt(s.contribution)} NT$`}</title>
+                  </rect>
+                );
+              })}
+              {/* Net marker and label */}
+              <line x1={netX} y1={barY - 4} x2={netX} y2={barY + barH + 4}
+                    stroke={netColor} strokeWidth={1.5} strokeDasharray="4 3" />
+              <text x={netX + (r.net >= 0 ? 4 : -4)}
+                    y={barY + barH + 14}
+                    fontSize={11}
+                    fontWeight={600}
+                    textAnchor={r.net >= 0 ? 'start' : 'end'}
+                    fill={netColor}>
+                {`${t('analysis.netTotal')} ${r.net > 0 ? '+' : ''}${fmtInt(r.net)} 元`}
+              </text>
             </g>
           );
         })}
-
-        {/* Net marker (dashed vertical line + label on the active side) */}
-        <line x1={netX} y1={10} x2={netX} y2={H - 10}
-              stroke={net < 0 ? '#059669' : '#e11d48'} strokeWidth={1.5}
-              strokeDasharray="4 3" />
-        <text x={netX + (net >= 0 ? 4 : -4)}
-              y={H - 2}
-              fontSize={11}
-              fontWeight={600}
-              textAnchor={net >= 0 ? 'start' : 'end'}
-              fill={net < 0 ? '#059669' : '#e11d48'}>
-          {`淨 ${net > 0 ? '+' : ''}${fmtInt(net)} 元`}
-        </text>
       </svg>
 
       {/* Legend */}
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-600">
-        {segs.map((s) => (
+        <div className="flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-sm" style={{ background: '#fb923c' }} />
+          <span>{c1Label}</span>
+        </div>
+        {legendSegs.map((s) => (
           <div key={s.key} className="flex items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-sm" style={{ background: s.color }} />
             <span>{s.label}</span>
-            <span className="tabular-nums text-slate-400">
-              {s.contribution > 0 ? '+' : ''}{fmtInt(s.contribution)}
-            </span>
           </div>
         ))}
       </div>

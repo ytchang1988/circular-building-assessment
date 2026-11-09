@@ -9,11 +9,13 @@ import { useTranslation } from 'react-i18next';
 import { useProject } from '@/store/project';
 import {
   aggregateComponent,
+  aggregateLCCScenario,
   buildSankeyFlows,
   computeFloorElement,
   computeInteriorWallElement,
   type FloorElement,
   type InteriorWallElement,
+  type LCCItem,
 } from '@/engine';
 import {
   FLOORS_TEMPLATE,
@@ -82,7 +84,7 @@ export function LifecycleBody({ category }: { category: LifecycleCategory }) {
     return FLOORS_TEMPLATE.buildingClasses;
   }, [category]);
 
-  const { perElement, summary, flows } = useMemo(() => {
+  const { perElement, summary, flows, lccScenarios } = useMemo(() => {
     const perElement = elements.map((el) => {
       try {
         if (category === 'interiorWalls') {
@@ -109,10 +111,21 @@ export function LifecycleBody({ category }: { category: LifecycleCategory }) {
         result: p.r.result,
       })),
     );
+    const lccItems: LCCItem[] = okPairs.map((p) => ({
+      green: p.el.greenDemolition,
+      hints: p.el.constructionType || '',
+      isStructural: false,
+      layer: '內裝',
+      mat: p.r.result,
+    }));
     return {
       perElement,
       summary: aggregateComponent(template.category, okPairs.map((p) => p.r.result)),
       flows,
+      lccScenarios: {
+        current:  aggregateLCCScenario(lccItems),
+        standard: aggregateLCCScenario(lccItems, false),
+      },
     };
   }, [elements, buildingClass, category, template]);
 
@@ -323,7 +336,7 @@ export function LifecycleBody({ category }: { category: LifecycleCategory }) {
           <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
             {t('columns.analysisResults')}
           </h3>
-          <AnalysisResults summary={summary} flows={flows} />
+          <AnalysisResults summary={summary} flows={flows} lccScenarios={lccScenarios} />
         </div>
       )}
     </>

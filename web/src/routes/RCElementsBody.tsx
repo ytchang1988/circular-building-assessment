@@ -4,8 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { useProject } from '@/store/project';
 import {
   aggregateComponent,
+  aggregateLCCScenario,
   buildSankeyFlows,
   computeColumnElement,
+  type LCCItem,
   type RCColumnsTemplate,
 } from '@/engine';
 import { fmtInt, fmtNum } from '@/lib/format';
@@ -81,7 +83,7 @@ export function RCElementsBody({
     [template],
   );
 
-  const { perElement, summary, flows } = useMemo(() => {
+  const { perElement, summary, flows, lccScenarios } = useMemo(() => {
     const perElement = elements.map((el) => {
       try {
         return { ok: true as const, result: computeColumnElement(el, template) };
@@ -102,10 +104,21 @@ export function RCElementsBody({
         result: p.r.result,
       })),
     );
+    const lccItems: LCCItem[] = okWithEl.map((p) => ({
+      green: p.el.greenDemolition,
+      hints: '鋼筋',
+      isStructural: true,
+      layer: '結構',
+      mat: p.r.result,
+    }));
     return {
       perElement,
       summary: aggregateComponent(template.category, okWithEl.map((p) => p.r.result)),
       flows,
+      lccScenarios: {
+        current:  aggregateLCCScenario(lccItems),
+        standard: aggregateLCCScenario(lccItems, false),
+      },
     };
   }, [elements, template, category, t]);
 
@@ -312,7 +325,7 @@ export function RCElementsBody({
           <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">
             {t('columns.analysisResults')}
           </h3>
-          <AnalysisResults summary={summary} flows={flows} />
+          <AnalysisResults summary={summary} flows={flows} lccScenarios={lccScenarios} />
         </div>
       )}
     </>
