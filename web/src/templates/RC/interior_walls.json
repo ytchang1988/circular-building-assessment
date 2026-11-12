@@ -36,7 +36,11 @@
       "lightweight": "N",
       "componentDetachable": "N",
       "systemDetachable": "N",
-      "unitPrice": 3750
+      "unitPrice": 3750,
+      "materials": [
+        { "name": "紅磚76塊", "weightPerM2New": 140 },
+        { "name": "1:3水泥砂漿", "weightPerM2New": 60 }
+      ]
     },
     {
       "name": "輕質灌漿牆",
@@ -49,7 +53,15 @@
       "lightweight": "Y",
       "componentDetachable": "N",
       "systemDetachable": "N",
-      "unitPrice": 2000
+      "unitPrice": 2000,
+      "materials": [
+        { "name": "雙面纖維水泥板6mm", "weightPerM2New": 20 },
+        { "name": "上下槽鐵75*40mm", "weightPerM2New": 6.5, "fr": 0.80, "cr": 0.90 },
+        { "name": "C型立柱70x40x0.8mm@30cm", "weightPerM2New": 2.88, "fr": 0.80, "cr": 0.90 },
+        { "name": "輕質混凝土75mm", "weightPerM2New": 120 },
+        { "name": "雙面批土", "weightPerM2New": 2.63 },
+        { "name": "雙面水泥漆粉刷", "weightPerM2New": 0.08 }
+      ]
     },
     {
       "name": "輕隔間牆（矽酸鈣板）",
@@ -62,7 +74,15 @@
       "lightweight": "Y",
       "componentDetachable": "Y",
       "systemDetachable": "Y",
-      "unitPrice": 1450
+      "unitPrice": 1450,
+      "materials": [
+        { "name": "雙面矽酸鈣板0.9cm", "weightPerM2New": 24 },
+        { "name": "上下槽鐵75*40mm", "weightPerM2New": 6.5, "fr": 0.80, "cr": 0.90 },
+        { "name": "C型立柱70x40x0.8mm@30cm", "weightPerM2New": 2.88, "fr": 0.80, "cr": 0.90 },
+        { "name": "玻璃棉5cm", "weightPerM2New": 1.0 },
+        { "name": "雙面批土", "weightPerM2New": 2.63 },
+        { "name": "雙面水泥漆粉刷", "weightPerM2New": 0.08 }
+      ]
     },
     {
       "name": "10公分RC隔間牆",
@@ -75,7 +95,14 @@
       "lightweight": "N",
       "componentDetachable": "N",
       "systemDetachable": "N",
-      "unitPrice": 2000
+      "unitPrice": 2000,
+      "materials": [
+        { "name": "3000psi RC 10cm", "weightPerM2New": 240 },
+        { "name": "單層筋#3@10cm垂直@15cm", "weightPerM2New": 8.26, "fr": 0.80, "cr": 0.90 },
+        { "name": "雙面1:3水泥砂漿粉刷2cm厚", "weightPerM2New": 40 },
+        { "name": "雙面批土", "weightPerM2New": 2.63 },
+        { "name": "雙面水泥漆粉刷", "weightPerM2New": 0.08 }
+      ]
     },
     {
       "name": "12公分RC隔間牆",
@@ -88,7 +115,14 @@
       "lightweight": "N",
       "componentDetachable": "N",
       "systemDetachable": "N",
-      "unitPrice": 2400
+      "unitPrice": 2400,
+      "materials": [
+        { "name": "3000psi RC 12cm", "weightPerM2New": 288 },
+        { "name": "單層筋#3@10cm垂直@15cm", "weightPerM2New": 9.91, "fr": 0.80, "cr": 0.90 },
+        { "name": "雙面1:3水泥砂漿粉刷2cm厚", "weightPerM2New": 40 },
+        { "name": "雙面批土", "weightPerM2New": 2.63 },
+        { "name": "雙面水泥漆粉刷", "weightPerM2New": 0.08 }
+      ]
     },
     {
       "name": "清水空心磚牆",
@@ -101,7 +135,13 @@
       "lightweight": "Y",
       "componentDetachable": "N",
       "systemDetachable": "N",
-      "unitPrice": 2150
+      "unitPrice": 2150,
+      "materials": [
+        { "name": "空心磚 39x19x9cm x12.5塊", "weightPerM2New": 100 },
+        { "name": "砌磚用砂漿", "weightPerM2New": 20 },
+        { "name": "#3@800mm", "weightPerM2New": 0.74, "fr": 0.80, "cr": 0.90 },
+        { "name": "水平補強鋼網", "weightPerM2New": 1.57, "fr": 0.80, "cr": 0.90 }
+      ]
     },
     {
       "name": "水泥雙面粉刷空心磚牆",
@@ -114,7 +154,16 @@
       "lightweight": "Y",
       "componentDetachable": "N",
       "systemDetachable": "N",
-      "unitPrice": 4050
+      "unitPrice": 4050,
+      "materials": [
+        { "name": "空心磚 39x19x9cm x12.5塊", "weightPerM2New": 100 },
+        { "name": "補強砂漿", "weightPerM2New": 25 },
+        { "name": "砌磚用砂漿", "weightPerM2New": 20 },
+        { "name": "#3@800mm", "weightPerM2New": 0.74, "fr": 0.80, "cr": 0.90 },
+        { "name": "水平補強鋼網", "weightPerM2New": 1.57, "fr": 0.80, "cr": 0.90 },
+        { "name": "雙面批土", "weightPerM2New": 2.63 },
+        { "name": "雙面水泥漆粉刷", "weightPerM2New": 0.08 }
+      ]
     }
   ],
   "elementDefaults": {

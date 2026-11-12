@@ -5,10 +5,12 @@ import { useProject } from '@/store/project';
 import {
   aggregateComponent,
   aggregateLCCScenario,
+  buildCompositeVariants,
   buildSankeyFlows,
   computeAreaElement,
   type LCCItem,
 } from '@/engine';
+import { VariantBreakdownPanel } from '@/components/VariantBreakdownPanel';
 import type { CompositeTemplate } from '@/engine/composite';
 import { fmtInt, fmtNum } from '@/lib/format';
 import type { CompositeCategoryKey } from '@/templates/RC/compositeRegistry';
@@ -166,6 +168,18 @@ export function CompositeBody({
       />
 
       <CompositeInputGuide />
+
+      <VariantBreakdownPanel
+        variants={useMemo(
+          () => buildCompositeVariants(elements, template, {
+            reusedTag: t('variantBreakdown.labels.reused'),
+            greenTag: t('variantBreakdown.labels.green'),
+            prefabTag: t('variantBreakdown.labels.prefab'),
+            constructionLabel: t('variantBreakdown.labels.construction'),
+          }),
+          [elements, template, t],
+        )}
+      />
 
       {selected.size > 0 && (
         <AreaBatchBar

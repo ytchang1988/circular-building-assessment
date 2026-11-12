@@ -145,7 +145,9 @@ export function computeColumnElement(
   const downcycleFactor = d.downcycle === 'Y' ? 0.8 : 1;
   const ELFI = (LFI * lightweightFactor) / downcycleFactor;
 
-  const MCIp = 1 - (0.9 * ELFI) / CI_USE;
+  // EMF clamp: MCI ∈ [0, 1] (short life / high ELFI can drive the raw value
+  // below zero; cap at 0 per the EMF Material Circularity Indicator paper).
+  const MCIp = Math.max(0, 1 - (0.9 * ELFI) / CI_USE);
 
   const componentDetachFactor = d.componentDetachable === 'N' ? 0.8 : 1;
   const modularFactor = el.prefabModular ? 1.1 : 1;

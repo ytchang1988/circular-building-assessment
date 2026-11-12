@@ -210,6 +210,35 @@
     "discountBase": "Nominal discount i = 5.2% (base)",
     "lifeNote": "Life: structure 60 / envelope 30 / interior 20 yr"
   },
+  "variantBreakdown": {
+    "title": "Component × material MCI breakdown",
+    "hint": "My MCI&PCI-style: one parent per design variant, children per material with MCI chain",
+    "footnote": "Parent M = total mass of all elements in this variant on this page; MCIp = Σ(MCI_mat × M_mat) / Σ M_mat, matching the category MCIp. F_u is a component-level flag (reused = 100%); other params come from the template.",
+    "expand": "Expand materials",
+    "collapse": "Collapse materials",
+    "ELFIHint": "LFI′ = LFI × Re / Level (downcycle / lightweight adjust)",
+    "headers": {
+      "name": "Variant / material",
+      "M": "M (kg)"
+    },
+    "groups": {
+      "input": "Mfg input",
+      "eol": "EOL handling",
+      "flow": "Flow",
+      "life": "Lifetime",
+      "mci": "MCI"
+    },
+    "labels": {
+      "concrete": "Concrete",
+      "rebar": "Rebar",
+      "construction": "Construction",
+      "glass": "Glass",
+      "frame": "Frame",
+      "reused": "reused",
+      "green": "green",
+      "prefab": "prefab"
+    }
+  },
   "analysis": {
     "materialComposition": "Material composition",
     "circularityIndices": "Circularity indices",

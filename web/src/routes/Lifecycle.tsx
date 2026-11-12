@@ -10,6 +10,8 @@ import { useProject } from '@/store/project';
 import {
   aggregateComponent,
   aggregateLCCScenario,
+  buildFloorVariants,
+  buildInteriorWallVariants,
   buildSankeyFlows,
   computeFloorElement,
   computeInteriorWallElement,
@@ -17,6 +19,7 @@ import {
   type InteriorWallElement,
   type LCCItem,
 } from '@/engine';
+import { VariantBreakdownPanel } from '@/components/VariantBreakdownPanel';
 import {
   FLOORS_TEMPLATE,
   INTERIOR_WALLS_TEMPLATE,
@@ -216,6 +219,25 @@ export function LifecycleBody({ category }: { category: LifecycleCategory }) {
       </div>
 
       <LifecycleInputGuide />
+
+      <VariantBreakdownPanel
+        variants={useMemo(
+          () =>
+            category === 'interiorWalls'
+              ? buildInteriorWallVariants(elements as InteriorWallElement[], INTERIOR_WALLS_TEMPLATE, buildingClass, {
+                  reusedTag: t('variantBreakdown.labels.reused'),
+                  greenTag: t('variantBreakdown.labels.green'),
+                  prefabTag: t('variantBreakdown.labels.prefab'),
+                  constructionLabel: t('variantBreakdown.labels.construction'),
+                })
+              : buildFloorVariants(elements as FloorElement[], FLOORS_TEMPLATE, buildingClass, {
+                  reusedTag: t('variantBreakdown.labels.reused'),
+                  prefabTag: t('variantBreakdown.labels.prefab'),
+                  constructionLabel: t('variantBreakdown.labels.construction'),
+                }),
+          [elements, category, buildingClass, t],
+        )}
+      />
 
       {selected.size > 0 && (
         <AreaBatchBar

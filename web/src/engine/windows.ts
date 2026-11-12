@@ -102,7 +102,9 @@ export function computeWindowElement(
   const downcycleFactor = combo.downcycle === 'Y' ? 0.8 : 1;
   const ELFI = (LFI * lightweightFactor) / downcycleFactor;
 
-  const MCIp = CI_USE === 0 ? 0 : 1 - (0.9 * ELFI) / CI_USE;
+  // EMF clamp: MCI ∈ [0, 1] (short life / high ELFI can push the raw value
+  // below zero; cap at 0 per the EMF Material Circularity Indicator paper).
+  const MCIp = CI_USE === 0 ? 0 : Math.max(0, 1 - (0.9 * ELFI) / CI_USE);
   const componentDetachFactor = combo.componentDetachable === 'N' ? 0.8 : 1;
   const modularFactor = el.prefabModular ? 1.1 : 1;
   const PCI = MCIp * componentDetachFactor * modularFactor;

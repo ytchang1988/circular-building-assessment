@@ -23,26 +23,15 @@
       "componentDetachable": "N",
       "systemDetachable": "N",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 200,
-          "totalECPerM2": 105.76,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 3
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 120,
-          "totalECPerM2": 72.53,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 100,
-          "totalECPerM2": 52.88,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 1
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 200, "totalECPerM2": 105.76, "baseUpdateCount": 1, "surfaceUpdateCount": 3 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 120, "totalECPerM2": 72.53, "baseUpdateCount": 0, "surfaceUpdateCount": 2 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 100, "totalECPerM2": 52.88, "baseUpdateCount": 0, "surfaceUpdateCount": 1 }
       },
-      "unitPrice": 1500
+      "unitPrice": 1500,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "1cm磁磚", "weightPerM2New": 20, "layer": "surface" }
+      ]
     },
     {
       "name": "整體粉光地坪",
@@ -51,26 +40,14 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 5.542857143,
-          "totalECPerM2": 1.94,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 3
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 2.771428571,
-          "totalECPerM2": 0.97,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 2.771428571,
-          "totalECPerM2": 0.97,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 1
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 5.542857143, "totalECPerM2": 1.94, "baseUpdateCount": 1, "surfaceUpdateCount": 3 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 2.771428571, "totalECPerM2": 0.97, "baseUpdateCount": 0, "surfaceUpdateCount": 2 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 2.771428571, "totalECPerM2": 0.97, "baseUpdateCount": 0, "surfaceUpdateCount": 1 }
       },
-      "unitPrice": 1050
+      "unitPrice": 1050,
+      "materials": [
+        { "name": "水泥漆粉刷", "weightPerM2New": 2.771428571, "layer": "base" }
+      ]
     },
     {
       "name": "水泥砂漿地坪",
@@ -79,26 +56,14 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 120,
-          "totalECPerM2": 27.16,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 3
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 60,
-          "totalECPerM2": 13.58,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 60,
-          "totalECPerM2": 13.58,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 1
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 120, "totalECPerM2": 27.16, "baseUpdateCount": 1, "surfaceUpdateCount": 3 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 60, "totalECPerM2": 13.58, "baseUpdateCount": 0, "surfaceUpdateCount": 2 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 60, "totalECPerM2": 13.58, "baseUpdateCount": 0, "surfaceUpdateCount": 1 }
       },
-      "unitPrice": 750
+      "unitPrice": 750,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" }
+      ]
     },
     {
       "name": "貼石材地坪（軟）",
@@ -107,26 +72,15 @@
       "componentDetachable": "N",
       "systemDetachable": "N",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 352,
-          "totalECPerM2": 50.88,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 3
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 224,
-          "totalECPerM2": 29.11,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 176,
-          "totalECPerM2": 25.44,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 1
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 352, "totalECPerM2": 50.88, "baseUpdateCount": 1, "surfaceUpdateCount": 3 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 224, "totalECPerM2": 29.11, "baseUpdateCount": 0, "surfaceUpdateCount": 2 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 176, "totalECPerM2": 25.44, "baseUpdateCount": 0, "surfaceUpdateCount": 1 }
       },
-      "unitPrice": 4300
+      "unitPrice": 4300,
+      "materials": [
+        { "name": "1:3水泥砂漿4cm厚", "weightPerM2New": 80, "layer": "base" },
+        { "name": "石板2cm", "weightPerM2New": 48, "layer": "surface" }
+      ]
     },
     {
       "name": "磨/洗/抿/植石子地坪",
@@ -135,26 +89,14 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 220,
-          "totalECPerM2": 50.06,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 3
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 110,
-          "totalECPerM2": 25.03,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 110,
-          "totalECPerM2": 25.03,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 1
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 220, "totalECPerM2": 50.06, "baseUpdateCount": 1, "surfaceUpdateCount": 3 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 110, "totalECPerM2": 25.03, "baseUpdateCount": 0, "surfaceUpdateCount": 2 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 110, "totalECPerM2": 25.03, "baseUpdateCount": 0, "surfaceUpdateCount": 1 }
       },
-      "unitPrice": 4700
+      "unitPrice": 4700,
+      "materials": [
+        { "name": "1:3水泥砂漿5.5cm厚", "weightPerM2New": 110, "layer": "base" }
+      ]
     },
     {
       "name": "PU/Epoxy/壓花/硬化膜/壓克力樹脂/紙模版",
@@ -163,26 +105,16 @@
       "componentDetachable": "N",
       "systemDetachable": "N",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 153.8,
-          "totalECPerM2": 57.24,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 3
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 85.35,
-          "totalECPerM2": 36.14,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 76.9,
-          "totalECPerM2": 28.62,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 1
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 153.8, "totalECPerM2": 57.24, "baseUpdateCount": 1, "surfaceUpdateCount": 3 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 85.35, "totalECPerM2": 36.14, "baseUpdateCount": 0, "surfaceUpdateCount": 2 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 76.9, "totalECPerM2": 28.62, "baseUpdateCount": 0, "surfaceUpdateCount": 1 }
       },
-      "unitPrice": 943
+      "unitPrice": 943,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "2mm環氧樹脂2.45kg", "weightPerM2New": 2.45, "layer": "surface" },
+        { "name": "石英砂6kg", "weightPerM2New": 6, "layer": "surface" }
+      ]
     },
     {
       "name": "水泥砂漿地坪+高架實木板、美耐板鋪作地坪",
@@ -191,26 +123,18 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 334.2,
-          "totalECPerM2": 132.16,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 5
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 202.8,
-          "totalECPerM2": 83.58,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 3
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 167.1,
-          "totalECPerM2": 66.08,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 334.2, "totalECPerM2": 132.16, "baseUpdateCount": 1, "surfaceUpdateCount": 5 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 202.8, "totalECPerM2": 83.58, "baseUpdateCount": 0, "surfaceUpdateCount": 3 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 167.1, "totalECPerM2": 66.08, "baseUpdateCount": 0, "surfaceUpdateCount": 2 }
       },
-      "unitPrice": 3250
+      "unitPrice": 3250,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "0.5mmPVC防水布", "weightPerM2New": 0.7, "layer": "surface" },
+        { "name": "1吋*1.5寸角材（架高25cm）", "weightPerM2New": 15, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "四分合版", "weightPerM2New": 7, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "上漆映實木1.5cm", "weightPerM2New": 13, "layer": "surface", "frr": 1.0, "cr": 1.0 }
+      ]
     },
     {
       "name": "水泥砂漿地坪+高架超耐磨地板鋪作地坪",
@@ -219,26 +143,18 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 316.2,
-          "totalECPerM2": 164.26,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 5
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 190.8,
-          "totalECPerM2": 104.98,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 3
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 158.1,
-          "totalECPerM2": 82.13,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 316.2, "totalECPerM2": 164.26, "baseUpdateCount": 1, "surfaceUpdateCount": 5 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 190.8, "totalECPerM2": 104.98, "baseUpdateCount": 0, "surfaceUpdateCount": 3 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 158.1, "totalECPerM2": 82.13, "baseUpdateCount": 0, "surfaceUpdateCount": 2 }
       },
-      "unitPrice": 2950
+      "unitPrice": 2950,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "0.5mmPVC防水布", "weightPerM2New": 0.7, "layer": "surface" },
+        { "name": "1吋*1.5寸角材（架高25cm）", "weightPerM2New": 15, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "四分合版", "weightPerM2New": 7, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "超耐磨地板", "weightPerM2New": 10, "layer": "surface" }
+      ]
     },
     {
       "name": "水泥砂漿地坪+角材墊高平鋪實木板、美耐板地坪",
@@ -247,26 +163,18 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 298.2,
-          "totalECPerM2": 116.38,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 5
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 178.8,
-          "totalECPerM2": 73.06,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 3
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 149.1,
-          "totalECPerM2": 58.19,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 298.2, "totalECPerM2": 116.38, "baseUpdateCount": 1, "surfaceUpdateCount": 5 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 178.8, "totalECPerM2": 73.06, "baseUpdateCount": 0, "surfaceUpdateCount": 3 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 149.1, "totalECPerM2": 58.19, "baseUpdateCount": 0, "surfaceUpdateCount": 2 }
       },
-      "unitPrice": 2750
+      "unitPrice": 2750,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "0.5mmPVC防水布", "weightPerM2New": 0.7, "layer": "surface" },
+        { "name": "1吋*1.5寸角材（架高0cm）", "weightPerM2New": 9, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "四分合版", "weightPerM2New": 7, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "上漆映實木1.5cm", "weightPerM2New": 13, "layer": "surface", "frr": 1.0, "cr": 1.0 }
+      ]
     },
     {
       "name": "水泥砂漿地坪+角材墊高平鋪超耐磨地板地坪",
@@ -275,26 +183,18 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 280.2,
-          "totalECPerM2": 148.49,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 5
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 166.8,
-          "totalECPerM2": 94.47,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 3
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 140.1,
-          "totalECPerM2": 74.25,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 280.2, "totalECPerM2": 148.49, "baseUpdateCount": 1, "surfaceUpdateCount": 5 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 166.8, "totalECPerM2": 94.47, "baseUpdateCount": 0, "surfaceUpdateCount": 3 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 140.1, "totalECPerM2": 74.25, "baseUpdateCount": 0, "surfaceUpdateCount": 2 }
       },
-      "unitPrice": 2550
+      "unitPrice": 2550,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "0.5mmPVC防水布", "weightPerM2New": 0.7, "layer": "surface" },
+        { "name": "1吋*1.5寸角材（架高0cm）", "weightPerM2New": 9, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "四分合版", "weightPerM2New": 7, "layer": "surface", "frr": 1.0, "cr": 1.0 },
+        { "name": "超耐磨地板", "weightPerM2New": 10, "layer": "surface" }
+      ]
     },
     {
       "name": "水泥砂漿地坪+直鋪式（墊PS版）超耐磨地板",
@@ -303,26 +203,17 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 190.2,
-          "totalECPerM2": 124.6,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 5
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 106.8,
-          "totalECPerM2": 78.54,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 3
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 95.1,
-          "totalECPerM2": 62.3,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 190.2, "totalECPerM2": 124.6, "baseUpdateCount": 1, "surfaceUpdateCount": 5 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 106.8, "totalECPerM2": 78.54, "baseUpdateCount": 0, "surfaceUpdateCount": 3 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 95.1, "totalECPerM2": 62.3, "baseUpdateCount": 0, "surfaceUpdateCount": 2 }
       },
-      "unitPrice": 2250
+      "unitPrice": 2250,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "0.5mmPVC防水布", "weightPerM2New": 0.7, "layer": "surface" },
+        { "name": "2cmPS板", "weightPerM2New": 1, "layer": "surface" },
+        { "name": "超耐磨地板", "weightPerM2New": 10, "layer": "surface" }
+      ]
     },
     {
       "name": "水泥砂漿地坪+貼塑膠地板/方塊地毯",
@@ -331,26 +222,16 @@
       "componentDetachable": "N",
       "systemDetachable": "N",
       "byClass": {
-        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": {
-          "totalWeightPerM2": 144.72,
-          "totalECPerM2": 58.9,
-          "baseUpdateCount": 1,
-          "surfaceUpdateCount": 5
-        },
-        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": {
-          "totalWeightPerM2": 76.48,
-          "totalECPerM2": 34.74,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 3
-        },
-        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": {
-          "totalWeightPerM2": 72.36,
-          "totalECPerM2": 29.45,
-          "baseUpdateCount": 0,
-          "surfaceUpdateCount": 2
-        }
+        "高耗損建築（商店商場、旅館、餐廳、運動、醫療、娛樂、交通旅運設施）": { "totalWeightPerM2": 144.72, "totalECPerM2": 58.9, "baseUpdateCount": 1, "surfaceUpdateCount": 5 },
+        "中耗損建築（出租辦公建築、工廠、公共廳舍、教育文化設施）": { "totalWeightPerM2": 76.48, "totalECPerM2": 34.74, "baseUpdateCount": 0, "surfaceUpdateCount": 3 },
+        "低耗損建築（自用辦公建築、倉庫、住宅、住宿類建築）": { "totalWeightPerM2": 72.36, "totalECPerM2": 29.45, "baseUpdateCount": 0, "surfaceUpdateCount": 2 }
       },
-      "unitPrice": 1350
+      "unitPrice": 1350,
+      "materials": [
+        { "name": "1:3水泥砂漿3cm厚", "weightPerM2New": 60, "layer": "base" },
+        { "name": "樹脂黏著劑 0.12kg", "weightPerM2New": 0.12, "layer": "surface" },
+        { "name": "塑膠地磚 0.20cm厚", "weightPerM2New": 4, "layer": "surface" }
+      ]
     }
   ],
   "elementDefaults": {

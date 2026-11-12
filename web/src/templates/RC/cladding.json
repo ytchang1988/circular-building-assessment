@@ -27,7 +27,12 @@
       "componentDetachable": "N",
       "systemDetachable": "N",
       "designECPerM2": 48.35,
-      "unitPrice": 5100
+      "unitPrice": 5100,
+      "materials": [
+        { "name": "1:3水泥砂漿2cm厚", "weightPerM2New": 40, "layer": "base" },
+        { "name": "益膠泥2.4kg", "weightPerM2New": 2.4, "layer": "surface" },
+        { "name": "磁磚1cm", "weightPerM2New": 23, "layer": "surface" }
+      ]
     },
     {
       "name": "RC外牆乾式鋼件掛石材",
@@ -39,7 +44,12 @@
       "componentDetachable": "Y",
       "systemDetachable": "N",
       "designECPerM2": 25.58,
-      "unitPrice": 7400
+      "unitPrice": 7400,
+      "materials": [
+        { "name": "防水塗料", "weightPerM2New": 3, "layer": "surface" },
+        { "name": "不鏽鋼繫件", "weightPerM2New": 1.83, "layer": "surface", "fr": 0.80, "cr": 0.90 },
+        { "name": "各類石材3cm", "weightPerM2New": 80, "layer": "surface" }
+      ]
     },
     {
       "name": "RC外牆塗料外裝",
@@ -51,7 +61,11 @@
       "componentDetachable": "N",
       "systemDetachable": "N",
       "designECPerM2": 31.93,
-      "unitPrice": 3300
+      "unitPrice": 3300,
+      "materials": [
+        { "name": "1:3水泥砂漿2cm厚", "weightPerM2New": 40, "layer": "base" },
+        { "name": "防水塗料", "weightPerM2New": 3, "layer": "surface" }
+      ]
     },
     {
       "name": "金屬模板搗灌RC外牆 (免砂漿粉刷)貼磁磚",
@@ -63,7 +77,11 @@
       "componentDetachable": "Y",
       "systemDetachable": "N",
       "designECPerM2": 39.3,
-      "unitPrice": 4800
+      "unitPrice": 4800,
+      "materials": [
+        { "name": "益膠泥2.4kg", "weightPerM2New": 2.4, "layer": "surface" },
+        { "name": "磁磚1cm", "weightPerM2New": 23, "layer": "surface" }
+      ]
     },
     {
       "name": "金屬模板搗灌RC外牆 (免砂漿粉刷)塗料外裝",
@@ -75,7 +93,10 @@
       "componentDetachable": "Y",
       "systemDetachable": "N",
       "designECPerM2": 22.84,
-      "unitPrice": 3000
+      "unitPrice": 3000,
+      "materials": [
+        { "name": "防水塗料", "weightPerM2New": 3, "layer": "surface" }
+      ]
     },
     {
       "name": "預鑄乾式RC外牆(免砂漿粉刷)塗料外裝",
@@ -87,7 +108,10 @@
       "componentDetachable": "Y",
       "systemDetachable": "Y",
       "designECPerM2": 22.84,
-      "unitPrice": 4000
+      "unitPrice": 4000,
+      "materials": [
+        { "name": "防水塗料", "weightPerM2New": 3, "layer": "surface" }
+      ]
     }
   ]
 }

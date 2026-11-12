@@ -6,9 +6,11 @@ import {
   aggregateComponent,
   aggregateLCCScenario,
   buildSankeyFlows,
+  buildWindowVariants,
   computeWindowElement,
   type LCCItem,
 } from '@/engine';
+import { VariantBreakdownPanel } from '@/components/VariantBreakdownPanel';
 import type { WindowElement } from '@/engine/windows';
 import { WINDOWS_TEMPLATE } from '@/templates/RC/allRegistry';
 import { fmtInt, fmtNum } from '@/lib/format';
@@ -165,6 +167,18 @@ export function WindowsBody() {
       />
 
       <WindowsInputGuide />
+
+      <VariantBreakdownPanel
+        variants={useMemo(
+          () => buildWindowVariants(elements, WINDOWS_TEMPLATE, {
+            glass: t('variantBreakdown.labels.glass'),
+            frame: t('variantBreakdown.labels.frame'),
+            reusedTag: t('variantBreakdown.labels.reused'),
+            prefabTag: t('variantBreakdown.labels.prefab'),
+          }),
+          [elements, t],
+        )}
+      />
 
       {selected.size > 0 && (
         <WindowBatchBar

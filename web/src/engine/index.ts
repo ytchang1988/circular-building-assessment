@@ -7,3 +7,4 @@ export * from './floors';
 export * from './aggregate';
 export * from './sankey';
 export * from './lcc';
+export * from './variantBreakdown';

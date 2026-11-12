@@ -5,11 +5,13 @@ import { useProject } from '@/store/project';
 import {
   aggregateComponent,
   aggregateLCCScenario,
+  buildRCVariants,
   buildSankeyFlows,
   computeColumnElement,
   type LCCItem,
   type RCColumnsTemplate,
 } from '@/engine';
+import { VariantBreakdownPanel } from '@/components/VariantBreakdownPanel';
 import { fmtInt, fmtNum } from '@/lib/format';
 import { ImportDialog } from '@/components/ImportDialog';
 import type { ColumnElement } from '@/engine/types';
@@ -189,6 +191,18 @@ export function RCElementsBody({
       />
 
       <RCInputGuide />
+
+      <VariantBreakdownPanel
+        variants={useMemo(
+          () => buildRCVariants(elements, template, {
+            concrete: t('variantBreakdown.labels.concrete'),
+            rebar: t('variantBreakdown.labels.rebar'),
+            reusedTag: t('variantBreakdown.labels.reused'),
+            prefabTag: t('variantBreakdown.labels.prefab'),
+          }),
+          [elements, template, t],
+        )}
+      />
 
       {selected.size > 0 && (
         <BatchActionBar

@@ -210,6 +210,35 @@
     "discountBase": "名目折現率 i = 5.2% (基準)",
     "lifeNote": "壽命: 結構 60 / 外裝 30 / 內裝 20 年"
   },
+  "variantBreakdown": {
+    "title": "構件 × 材料 MCI 拆解",
+    "hint": "依 My MCI&PCI 格式,每設計變體列出組成材料的 MCI 計算鏈",
+    "footnote": "父列 M = 本頁所有該變體構件質量加總;MCIp = Σ(MCI_材料 × M_材料) / Σ M_材料,與各類別 MCIp 一致。F_u 是構件層旗標 (再利用=100%),其他參數取自模板。",
+    "expand": "展開材料明細",
+    "collapse": "收合材料明細",
+    "ELFIHint": "LFI′ = LFI × Re / Level (降級/輕量化調整)",
+    "headers": {
+      "name": "設計變體 / 材料",
+      "M": "M (kg)"
+    },
+    "groups": {
+      "input": "製造投入",
+      "eol": "拆除處置",
+      "flow": "物質流",
+      "life": "壽命",
+      "mci": "MCI 計算"
+    },
+    "labels": {
+      "concrete": "混凝土",
+      "rebar": "鋼筋",
+      "construction": "構造",
+      "glass": "玻璃",
+      "frame": "窗框",
+      "reused": "再用",
+      "green": "綠建材",
+      "prefab": "預鑄"
+    }
+  },
   "analysis": {
     "materialComposition": "材料組成",
     "circularityIndices": "循環度指標",
