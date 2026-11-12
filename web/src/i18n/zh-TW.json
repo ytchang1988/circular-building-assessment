@@ -53,6 +53,7 @@
     "totalFloorArea": "總樓地板面積 (m²)",
     "buildingType": {
       "RC": "鋼筋混凝土 (RC)",
+      "Hybrid": "混合型 (RC + 鋼構 + 木構)",
       "SRC": "鋼骨鋼筋混凝土 (SRC)"
     },
     "buildingClass": "建築分類",
@@ -79,11 +80,17 @@
     "consolidateNone": "沒有可合併的重複列",
     "consolidateDone": "已將 {{before}} 筆合併為 {{after}} 筆",
     "removeElement": "刪除",
+    "materialType": {
+      "rc": "RC",
+      "steel": "鋼構 (中空型鋼)",
+      "wood": "木構"
+    },
     "headers": {
       "floor": "樓層",
       "family": "族群與類型",
       "volumeM3": "體積 (m³)",
-      "concreteStrength": "混凝土強度",
+      "materialType": "材料類型",
+      "concreteStrength": "混凝土強度 / 木材類型",
       "admixturePct": "礦物摻料比例",
       "massMineral": "礦物 (kg)",
       "massMetal": "金屬 (kg)",

@@ -76,11 +76,12 @@ export function ProjectMetaRoute() {
           <select
             value={meta.buildingType}
             onChange={(e) =>
-              setMeta({ buildingType: e.target.value as 'RC' | 'SRC' })
+              setMeta({ buildingType: e.target.value as 'RC' | 'SRC' | 'Hybrid' })
             }
             className="rounded-md border border-slate-300 px-3 py-2"
           >
             <option value="RC">{t('project.buildingType.RC')}</option>
+            <option value="Hybrid">{t('project.buildingType.Hybrid')}</option>
             <option value="SRC" disabled>
               {t('project.buildingType.SRC')}
             </option>

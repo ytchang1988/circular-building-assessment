@@ -20,7 +20,7 @@ import {
   FLOORS_TEMPLATE,
 } from '@/templates/RC/allRegistry';
 
-export type BuildingType = 'RC' | 'SRC';
+export type BuildingType = 'RC' | 'SRC' | 'Hybrid';
 
 export interface ProjectMeta {
   name: string;

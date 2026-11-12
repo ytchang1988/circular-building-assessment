@@ -44,6 +44,14 @@ export interface CategoryDefaults {
   EC_efficiency: number;       // 拆除階段回收效率
 }
 
+/** Material type for a structural element in the Hybrid building type.
+ *  'rc' uses the existing concrete+rebar model; 'steel' uses hollow/solid
+ *  structural steel; 'wood' uses engineered wood with biogenic carbon.
+ *  For non-Hybrid buildings this defaults to 'rc' and behaves unchanged. */
+export type StructuralMaterialType = 'rc' | 'steel' | 'wood';
+
+export type WoodMemberType = 'solidWood' | 'glulam' | 'clt' | 'lvl';
+
 export interface ColumnElement {
   id: string;
   floor?: string;
@@ -51,11 +59,15 @@ export interface ColumnElement {
   volumeM3: number;
   note?: string;
   // Selections from 選填表單:
-  concreteStrength: string;     // matches ConcreteMaterial.strength
+  concreteStrength: string;     // matches ConcreteMaterial.strength (for 'rc')
   admixturePct: number;         // matches ConcreteMaterial.admixturePct
   reused: boolean;              // 再利用構件
   prefabModular: boolean;       // 預鑄工法或模矩化
   greenDemolition: boolean;     // 綠色拆除 — if true, sort waste by material code
+  /** Hybrid-only: which material to use. Omitted/undefined → 'rc'. */
+  materialType?: StructuralMaterialType;
+  /** Required when materialType === 'wood'. */
+  woodType?: WoodMemberType;
 }
 
 export interface ElementResult {

@@ -14,6 +14,12 @@ import type {
 } from './types';
 import { computeWaste } from './waste';
 import { computeLCC } from './lcc';
+import {
+  STEEL_PARAMS,
+  WOOD_PARAMS,
+  computeSteelElement,
+  computeWoodElement,
+} from './hybridStructure';
 
 export interface RCColumnsTemplate {
   category: string;
@@ -104,6 +110,16 @@ export function computeColumnElement(
   el: ColumnElement,
   template: RCColumnsTemplate,
 ): ElementResult {
+  // Hybrid dispatch — only applies when the element's materialType is set.
+  // Plain RC projects never set this flag, so the RC path runs unchanged.
+  if (el.materialType === 'steel') {
+    return computeSteelElement(el, STEEL_PARAMS);
+  }
+  if (el.materialType === 'wood') {
+    const woodType = el.woodType ?? 'solidWood';
+    return computeWoodElement(el, WOOD_PARAMS[woodType]);
+  }
+  // Default: RC (混凝土 + 鋼筋) path.
   const concrete = findConcrete(
     template,
     el.concreteStrength,

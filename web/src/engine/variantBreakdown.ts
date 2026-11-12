@@ -113,7 +113,11 @@ function rollUp(
 
 // ---------------------------------------------------------------------------
 // RC mono (columns / beams / slabs / walls) — concrete + rebar per element.
+// Hybrid building type: steel and wood elements split into their own variants
+// using STEEL_PARAMS / WOOD_PARAMS from hybridStructure.
 // ---------------------------------------------------------------------------
+
+import { STEEL_PARAMS, WOOD_PARAMS } from './hybridStructure';
 
 export function buildRCVariants(
   elements: ColumnElement[],
@@ -125,24 +129,79 @@ export function buildRCVariants(
     (r) => Math.abs(r.massPerM3 - tpl.rebarDefaultMassPerM3) <= 1,
   ) ?? tpl.rebarMaterials[0];
 
-  type Group = {
+  type RCGroup = {
     variantName: string; elementCount: number; totalVolume: number;
     concreteMass: number; rebarMass: number;
     concreteFr: number; concreteCr: number;
     concreteName: string;
     Fu: number; prefab: boolean;
   };
-  const byKey = new Map<string, Group>();
+  const rcByKey = new Map<string, RCGroup>();
+
+  type SteelGroup = {
+    variantName: string; elementCount: number; totalVolume: number;
+    Fu: number;
+  };
+  const steelByKey = new Map<string, SteelGroup>();
+
+  type WoodGroup = {
+    variantName: string; elementCount: number; totalVolume: number;
+    Fu: number; woodType: keyof typeof WOOD_PARAMS;
+  };
+  const woodByKey = new Map<string, WoodGroup>();
 
   for (const el of elements) {
     if (!el.volumeM3 || el.volumeM3 <= 0) continue;
+
+    if (el.materialType === 'steel') {
+      const key = `steel|${el.reused ? 1 : 0}|${el.prefabModular ? 1 : 0}`;
+      const g = steelByKey.get(key);
+      if (g) {
+        g.elementCount += 1;
+        g.totalVolume += el.volumeM3;
+      } else {
+        const tags = [el.reused ? labels.reusedTag : '', el.prefabModular ? labels.prefabTag : '']
+          .filter(Boolean).join(' / ');
+        steelByKey.set(key, {
+          variantName: tags ? `鋼構 (中空型鋼) (${tags})` : '鋼構 (中空型鋼)',
+          elementCount: 1,
+          totalVolume: el.volumeM3,
+          Fu: el.reused ? 1 : 0,
+        });
+      }
+      continue;
+    }
+
+    if (el.materialType === 'wood') {
+      const woodType = el.woodType ?? 'glulam';
+      const key = `wood|${woodType}|${el.reused ? 1 : 0}|${el.prefabModular ? 1 : 0}`;
+      const g = woodByKey.get(key);
+      if (g) {
+        g.elementCount += 1;
+        g.totalVolume += el.volumeM3;
+      } else {
+        const name = WOOD_PARAMS[woodType].name;
+        const tags = [el.reused ? labels.reusedTag : '', el.prefabModular ? labels.prefabTag : '']
+          .filter(Boolean).join(' / ');
+        woodByKey.set(key, {
+          variantName: tags ? `${name} (${tags})` : name,
+          elementCount: 1,
+          totalVolume: el.volumeM3,
+          Fu: el.reused ? 1 : 0,
+          woodType,
+        });
+      }
+      continue;
+    }
+
+    // Default RC path
     const c = tpl.concreteMaterials.find(
       (m) => m.strength === el.concreteStrength
         && Math.abs(m.admixturePct - el.admixturePct) < 1e-9,
     );
     if (!c) continue;
     const key = `${c.name}|${el.reused ? 1 : 0}|${el.prefabModular ? 1 : 0}`;
-    const g = byKey.get(key);
+    const g = rcByKey.get(key);
     const dCon = el.volumeM3 * c.density;
     const dReb = el.volumeM3 * rebar.massPerM3;
     if (g) {
@@ -153,7 +212,7 @@ export function buildRCVariants(
     } else {
       const tags = [el.reused ? labels.reusedTag : '', el.prefabModular ? labels.prefabTag : '']
         .filter(Boolean).join(' / ');
-      byKey.set(key, {
+      rcByKey.set(key, {
         variantName: tags ? `${c.name} (${tags})` : c.name,
         elementCount: 1,
         totalVolume: el.volumeM3,
@@ -169,7 +228,8 @@ export function buildRCVariants(
   }
 
   const out: ComponentBreakdownRow[] = [];
-  for (const g of byKey.values()) {
+
+  for (const g of rcByKey.values()) {
     const materials: MaterialInput[] = [
       {
         name: labels.concrete,
@@ -197,6 +257,50 @@ export function buildRCVariants(
       materials,
     ));
   }
+
+  // Steel: hollow envelope × fillRatio × density = M
+  for (const g of steelByKey.values()) {
+    const M = g.totalVolume * STEEL_PARAMS.fillRatio * STEEL_PARAMS.density;
+    const materials: MaterialInput[] = [{
+      name: '型鋼',
+      note: `${(STEEL_PARAMS.fillRatio * 100).toFixed(0)}% 填充率 × ${STEEL_PARAMS.density} kg/m³`,
+      M,
+      Fu: g.Fu, Fr: STEEL_PARAMS.recycledRatio, Cu: d.CU, Cr: STEEL_PARAMS.recyclableRatio,
+      Ef: d.EF, Ec: d.EC_efficiency,
+      L: d.productLifeYears, Lav: d.layerLifeYears,
+      downcycle: STEEL_PARAMS.downcycle, lightweight: STEEL_PARAMS.lightweight,
+    }];
+    out.push(rollUp(
+      g.variantName,
+      g.elementCount,
+      `${g.totalVolume.toFixed(2)} m³ × ${g.elementCount}`,
+      materials,
+    ));
+  }
+
+  // Wood: solid volume × density; FRR=1, CR=1 (biogenic)
+  for (const g of woodByKey.values()) {
+    const p = WOOD_PARAMS[g.woodType];
+    const M = g.totalVolume * p.density;
+    const materials: MaterialInput[] = [{
+      name: p.name,
+      note: `${p.density} kg/m³`,
+      M,
+      Fu: g.Fu, Fr: 0,
+      Frr: 1.0,
+      Cu: d.CU, Cr: 1.0,
+      Ef: d.EF, Ec: d.EC_efficiency,
+      L: d.productLifeYears, Lav: d.layerLifeYears,
+      downcycle: p.downcycle, lightweight: p.lightweight,
+    }];
+    out.push(rollUp(
+      g.variantName,
+      g.elementCount,
+      `${g.totalVolume.toFixed(2)} m³ × ${g.elementCount}`,
+      materials,
+    ));
+  }
+
   return out.sort((a, b) => b.totalM - a.totalM);
 }
 

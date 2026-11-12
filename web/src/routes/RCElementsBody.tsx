@@ -14,8 +14,9 @@ import {
 import { VariantBreakdownPanel } from '@/components/VariantBreakdownPanel';
 import { fmtInt, fmtNum } from '@/lib/format';
 import { ImportDialog } from '@/components/ImportDialog';
-import type { ColumnElement } from '@/engine/types';
+import type { ColumnElement, StructuralMaterialType, WoodMemberType } from '@/engine/types';
 import type { RCMonoCategory } from '@/templates/RC/allRegistry';
+import { WOOD_PARAMS } from '@/engine/hybridStructure';
 import { MaterialHeaders, MaterialRowCells } from '@/components/MaterialCells';
 import { WasteHeaders, WasteRowCells } from '@/components/WasteCells';
 import { LCCHeaders, LCCRowCells } from '@/components/LCCCells';
@@ -57,7 +58,16 @@ export function RCElementsBody({
   template: RCColumnsTemplate;
 }) {
   const { t } = useTranslation();
+  const buildingType = useProject((s) => s.meta.buildingType);
   const elements = useProject((s) => s.elements[category]);
+  const isHybridStructural =
+    buildingType === 'Hybrid' && (category === 'columns' || category === 'beams');
+  const woodTypes: { value: WoodMemberType; label: string }[] = [
+    { value: 'solidWood', label: WOOD_PARAMS.solidWood.name },
+    { value: 'glulam', label: WOOD_PARAMS.glulam.name },
+    { value: 'clt', label: WOOD_PARAMS.clt.name },
+    { value: 'lvl', label: WOOD_PARAMS.lvl.name },
+  ];
   const addElement = useProject((s) => s.addElement);
   const updateElement = useProject((s) => s.updateElement);
   const removeElement = useProject((s) => s.removeElement);
@@ -236,6 +246,9 @@ export function RCElementsBody({
                 <th className="px-3 py-2">{t('columns.headers.floor')}</th>
                 <th className="px-3 py-2">{t('columns.headers.family')}</th>
                 <th className="px-3 py-2">{t('columns.headers.volumeM3')}</th>
+                {isHybridStructural && (
+                  <th className="px-3 py-2">{t('columns.headers.materialType')}</th>
+                )}
                 <th className="px-3 py-2">{t('columns.headers.concreteStrength')}</th>
                 <th className="px-3 py-2">{t('columns.headers.admixturePct')}</th>
                 <MaterialHeaders />
@@ -284,23 +297,64 @@ export function RCElementsBody({
                         onChange={(e) => updateElement(category, el.id, { volumeM3: Number(e.target.value) || 0 })}
                         className="w-24 rounded border border-slate-200 px-2 py-1 text-right" />
                     </td>
+                    {isHybridStructural && (
+                      <td className="px-3 py-2">
+                        <select
+                          value={el.materialType ?? 'rc'}
+                          onChange={(e) =>
+                            updateElement(category, el.id, {
+                              materialType: e.target.value as StructuralMaterialType,
+                              woodType:
+                                e.target.value === 'wood'
+                                  ? (el.woodType ?? 'glulam')
+                                  : el.woodType,
+                            })
+                          }
+                          className="rounded border border-slate-200 px-2 py-1"
+                        >
+                          <option value="rc">{t('columns.materialType.rc')}</option>
+                          <option value="steel">{t('columns.materialType.steel')}</option>
+                          <option value="wood">{t('columns.materialType.wood')}</option>
+                        </select>
+                      </td>
+                    )}
                     <td className="px-3 py-2">
-                      <select value={el.concreteStrength}
-                        onChange={(e) => updateElement(category, el.id, { concreteStrength: e.target.value })}
-                        className="w-64 rounded border border-slate-200 px-2 py-1">
-                        {uniqueStrengths.map((s) => (
-                          <option key={s} value={s}>{s}</option>
-                        ))}
-                      </select>
+                      {el.materialType === 'steel' ? (
+                        <span className="text-xs text-slate-400">—</span>
+                      ) : el.materialType === 'wood' ? (
+                        <select
+                          value={el.woodType ?? 'glulam'}
+                          onChange={(e) =>
+                            updateElement(category, el.id, { woodType: e.target.value as WoodMemberType })
+                          }
+                          className="w-64 rounded border border-slate-200 px-2 py-1"
+                        >
+                          {woodTypes.map((w) => (
+                            <option key={w.value} value={w.value}>{w.label}</option>
+                          ))}
+                        </select>
+                      ) : (
+                        <select value={el.concreteStrength}
+                          onChange={(e) => updateElement(category, el.id, { concreteStrength: e.target.value })}
+                          className="w-64 rounded border border-slate-200 px-2 py-1">
+                          {uniqueStrengths.map((s) => (
+                            <option key={s} value={s}>{s}</option>
+                          ))}
+                        </select>
+                      )}
                     </td>
                     <td className="px-3 py-2">
-                      <select value={el.admixturePct}
-                        onChange={(e) => updateElement(category, el.id, { admixturePct: Number(e.target.value) })}
-                        className="rounded border border-slate-200 px-2 py-1">
-                        {uniqueAdmixtures.map((p) => (
-                          <option key={p} value={p}>{`${(p * 100).toFixed(0)}%`}</option>
-                        ))}
-                      </select>
+                      {el.materialType === 'steel' || el.materialType === 'wood' ? (
+                        <span className="text-xs text-slate-400">—</span>
+                      ) : (
+                        <select value={el.admixturePct}
+                          onChange={(e) => updateElement(category, el.id, { admixturePct: Number(e.target.value) })}
+                          className="rounded border border-slate-200 px-2 py-1">
+                          {uniqueAdmixtures.map((p) => (
+                            <option key={p} value={p}>{`${(p * 100).toFixed(0)}%`}</option>
+                          ))}
+                        </select>
+                      )}
                     </td>
                     <MaterialRowCells r={r.ok ? r.result : null} />
                     <td className="px-3 py-2 text-center">

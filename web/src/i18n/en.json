@@ -53,6 +53,7 @@
     "totalFloorArea": "Total floor area (m²)",
     "buildingType": {
       "RC": "Reinforced Concrete (RC)",
+      "Hybrid": "Hybrid (RC + Steel + Wood)",
       "SRC": "Steel Reinforced Concrete (SRC)"
     },
     "buildingClass": "Building class",
@@ -79,11 +80,17 @@
     "consolidateNone": "No duplicate rows to merge",
     "consolidateDone": "Merged {{before}} rows into {{after}}",
     "removeElement": "Remove",
+    "materialType": {
+      "rc": "RC",
+      "steel": "Steel (hollow)",
+      "wood": "Wood"
+    },
     "headers": {
       "floor": "Floor",
       "family": "Family / Type",
       "volumeM3": "Volume (m³)",
-      "concreteStrength": "Concrete strength",
+      "materialType": "Material",
+      "concreteStrength": "Concrete / Wood type",
       "admixturePct": "Mineral admixture %",
       "massMineral": "Mineral (kg)",
       "massMetal": "Metal (kg)",
